@@ -74,8 +74,17 @@
                 "file": "CCNA Study.md"
               }
             }
+          },
+          {
+            "id": "3ded059871a57865",
+            "type": "leaf",
+            "state": {
+              "type": "git-view",
+              "state": {}
+            }
           }
-        ]
+        ],
+        "currentTab": 4
       }
     ],
     "direction": "horizontal",
@@ -129,11 +138,13 @@
               }
             }
           }
-        ]
+        ],
+        "currentTab": 2
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -145,7 +156,7 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "6eff5e1b288b2a55",
+  "active": "3ded059871a57865",
   "lastOpenFiles": [
     "CCNA Study.md",
     "Bash scripting.md",
