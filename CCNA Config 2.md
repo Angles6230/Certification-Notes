@@ -1,4 +1,43 @@
 ## Configurations
+
+### Basic configs
+`Switch(config)#hostname []
+`SW2(config)#enable secret [password]
+`SW2(config)#username [username] secret [password]
+`SW2(config)#line console 0
+Require login to access line
+`SW2(config-line)#login local
+`SW2(config-line)#exec-timeout 5
+#### SSH
+Continued from above
+Create Domain name
+`SW2(config)#ip domain-name cisco.com
+Generate keys for ssh auth
+`SW2(config)#crypto key generate rsa
+`SW2(config)#line vty 0 15
+`SW2(config-line)#login local
+Require SSH connections
+`SW2(config-line)#transport input ssh
+
+### FTP
+Need to configure user and passwd
+`R2(config)#ip ftp username [username]
+`R2(config)#ip ftp password [password]
+Get file
+`R2# copy ftp flash`
+### TFTP
+`copy tftp [location]
+### Booting
+Boot system from tftp or flash 
+`R1(config)#boot system [flash|tftp] [filename]`
+Saving config
+`R1# copy run start`
+`R1# write`
+Restart
+`R1#reload`
+Delete something from flash
+`R1#delete flash:[filename]`
+
 ### CDP
 Enable CDP globally
 	`SW1(config)# cdp run`
@@ -11,6 +50,8 @@ Enable transmit and receive on interface
 	`SW3(config)#int g0/1
 	`SW3(config-if)#lldp transmit
 	`SW3(config-if)#lldp recieve`
+Specify delay timer for LLDP
+	`SW3(config)#lldp reinit [sec]`
 ### NTP
 Configuring the time
 `R1# clock set [time]`
@@ -58,8 +99,84 @@ Configure etherchannel loadbalancing
 		`(src-dst-mac) Src XOR Dst Mac Addr
 		`(src-ip) Src IP Addr
 		`(src-mac) Src Mac Addr
-
-
+### DHCP
+Reserve a DHCP range
+	`R2(config)#ip dhcp excluded-address [Lowest IP] [Highest IP]`
+Configuring the pool
+	`R2(config)#ip dhcp pool [Name]`
+	Add a network to distribute
+	`R2(dhcp-config)#network 192.168.1.0 255.255.255.0
+	DNS server to config
+	`R2(dhcp-config)#dns-server 8.8.8.8
+	Domain name to config
+	`R2(dhcp-config)#domain-name cisco.com
+	Default gateway to config
+	`R2(dhcp-config)#default-router 192.168.1.1
+Configure router interface as DHCP client
+	`R1(config)#int g0/0
+	`R1(config-if)#ip address dhcp`
+Configure router as a dhcp relay agent
+	Configure on the interface closest to the DHCP server
+	``R1(config)# int g0/1
+	`R1(config-if)#ip helper-address [DHCP server address]`
+### SNMP
+Create SNMP communities
+	`R1(config)#snmp-server community [name] [ro(read only)|rw (read-write)]`
+### Syslog Commands
+Include timestamps
+	`R1(config)#service timestamps log datetime msec`
+Enable logging for VTY lines
+	`R1#terminal monitor
+Enable logging to buffer
+	``R1(config)#logging buffered [size]`
+### NAT
+Configure interfaces as inside/outside
+`R1(config)#int g0/1
+`R1(config-if)#ip nat inside
+`R1(config-if)#int g0/0
+`R1(config-if)#ip nat outside
+Mapping static NAT
+`R1(config)#ip nat inside source static [local ip] [global ip]`
+Clearing dynamic NAT translations
+`R1#clear ip nat translation *`
+Dynamic NAT
+	Configure interfaces
+	`R1(config)#int g0/0
+	`R1(config-if)#ip nat outs
+	`R1(config-if)#int g0/1
+	`R1(config-if)#ip nat inside
+	`R1(config-if)#exit
+	Create access-list so router knows what to perimit
+	`R1(config)#access-list 1 permit 172.16.0.0 0.0.0.255
+	Create the Nat Pool and define the address range
+	`R1(config)#ip nat pool Pool1 100.0.0.1 100.0.0.2 netmask 255.255.255.0
+	Configure router to use the pool range as the source addr
+	`R1(config)#ip nat inside source list 1 pool Pool1
+PAT
+	Uses PAT and uses interface address for inside global
+	`R1(config)#ip nat inside source list 1 interface g0/0 overload
+### Voice VLANs
+Creating Vlans and assigning Voice VLAN
+	`SW1(config)#int ra g1/0/2-3
+	`SW1(config-if-range)#swi
+	`SW1(config-if-range)#switchport mode access
+	`SW1(config-if-range)#switchport access vlan 10
+	``% Access VLAN does not exist. Creating vlan 10
+	`SW1(config-if-range)#switchport voice vlan 20
+	``% Voice VLAN does not exist. Creating vlan 20
+Configure ROAS
+	`SW1(config-if)#switchport trunk encapsulation dot1q`
+	`SW1(config-if)#switchport mode trunk`
+	Allow only data and voice vlan
+	`SW1(config-if)#switchport trunk allowed vlan 10,20`
+	Sub interface configuration
+	`R1(config-if)#int f0/0.10
+	`R1(config-subif)#ip add 192.168.10.1 255.255.255.0`
+	`R1(config-subif)#encapsulation dot1q 10
+### QoS
+To identify QoS we use class map
+`R1(config)#class-map [Class map name]`
+`R1(config-cmap)#match protocol [https]
 ## Routing
 Enable IP routing on layer 3 switch
 	`DSW1(config)# ip routing`
@@ -115,6 +232,12 @@ HSRP Configuration
 		`priority` - 
 		`timers` - hello/hold timers
 		`track` - priority tracking
+### DNS
+Configure DNS server on router
+	`R1(config)#ip name-server [dnssvr IP]
+Associate names with host IP
+	`R1(config)#ip host [name] [host ip]`
+### NAT
 
 ## Access List
 ### Standard ACLs
@@ -140,7 +263,10 @@ Permit
 Apply
 	`R1(config-ext-nacl)#int g0/0`
 	`R1(config-if)#ip access-group 100 in`
-
+Enable logging to syslog server
+	``R1(config)#logging [ip addr]`
+Set severity of syslog msgs sent to server
+	``R1(config)#logging trap [severity]`
 # Show commands
 `show etherchannel summary
 show etherchannel load balancing
@@ -164,3 +290,11 @@ See everything
 `show cdp interface [int]`
 Show NTP
 `show ntp associations`
+Show DNS
+	`show hosts`
+Show logging
+	`show debugging`
+`show flash`
+Shows NAT translations aka src-dest
+`R1#show ip nat translations
+`R1#show ip nat statistics`

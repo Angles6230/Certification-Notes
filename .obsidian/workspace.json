@@ -18,6 +18,30 @@
                 "source": false
               }
             }
+          },
+          {
+            "id": "36e2ade3c5de44f3",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "CCNA Config 2.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "c33569b15fb31f75",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "CCNA tipics.md",
+                "mode": "source",
+                "source": false
+              }
+            }
           }
         ]
       }
@@ -84,7 +108,7 @@
             }
           }
         ],
-        "currentTab": 4
+        "currentTab": 3
       }
     ],
     "direction": "horizontal",
@@ -156,14 +180,14 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "3ded059871a57865",
+  "active": "6eff5e1b288b2a55",
   "lastOpenFiles": [
+    "CCNA Config 2.md",
+    "CCNA tipics.md",
     "CCNA Study.md",
     "Bash scripting.md",
     "CCNA 2.md",
     "Linux cmds to remember.md",
-    "CCNA configs.md",
-    "CCNA Config 2.md",
-    "CCNA tipics.md"
+    "CCNA configs.md"
   ]
 }

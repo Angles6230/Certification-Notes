@@ -25,6 +25,8 @@ Switch
 	Uses MAC address table to organize traffic
 	Learns MAC in hardware using ASIC(Application Specific Integrated Circuits)
 	Used in LAN
+	Microsegmentation - each host directly connected to switch is now its own collision domain
+	Same broadcast domains as a bridge
 Routers
 	Layer 3 devices
 	Uses IP address table to transport traffic
@@ -721,11 +723,14 @@ Trunk Ports
 	It is possible to use seperate interface for each VLAN when connecting to switch or routers
 	However with a larger amt of VLAN this is not viable
 	By default all VLANs are allowed on a trunk lan
+		Every single VLAN the switch knows about is on trunk
 	Trunking Protocols
 		ISL - InterSwitch Link
 			old Cisco propriety protocol
+			Encapsulates frames
 		802.1q or dot1q
 			industry standard
+			Does not encapsulate any frames
 	802.1q tag is inserted between source and type/length
 		4 bytes in length
 		TPID
@@ -818,11 +823,13 @@ VLAN Trunking Protocol
 VTP allows you to control VLANs on a central VTP server
 Other switches synchronize their VLAN Database to the server
 Cisco switches operate in server mode by default
+VTP domain name is case sensitive
 Versions
 	1	& 2
 		Do not support extended VLAN range
 	3
 		Supports extended VLAN range
+		Offers cryptography for VTP domain password
 Modes
 	Server
 		Can add/modify/delete VLANs
@@ -842,6 +849,7 @@ Modes
 		Does not participate in VTP domain
 		Maintains it's own VLAN DB in NVRAM but wont be advertised to other switches
 		Will not sync but will forward VTP advertisements
+		Only forwards VTP advertisements on trunk ports
 Show VTP status
 	VTP version capablities
 	VTP version running
@@ -1661,6 +1669,7 @@ SNMP Components
 			Software running on the managed devices that interact with the SNMP Manager
 		Management Information Base
 			Structure that contains variables that are managed by the SNMP
+			Information on the specified machine
 				Each variable is identified by the Object ID (OID)
 					Ex. Variables CPU, RAM etc.
 	SNMP Messages transfer information from agent and manager
@@ -1677,16 +1686,16 @@ SNMP Versions
 SNMP Message class
 	Read
 		Sent by NMS to read informaiton from the managed devices
-			Get
-				Request sent from the manager to agent to retrieve value of OID
-			GetNext'
-				Get the next available variables in MIB
-			GetBulk
-				more efficient GetNext
+		Get
+			Request sent from the manager to agent to retrieve value of OID
+		GetNext'
+			Get the next available variables in MIB
+		GetBulk
+			more efficient GetNext
 	Write
 		Sent by NMS to change information on the managed device
-			Set
-				Change the value of one or more variables
+		Set
+			Change the value of one or more variables
 		Notification
 			Sent by managed devices to alert the NMS of particular event
 				Trap
@@ -1781,8 +1790,8 @@ Source NAT
 Static NAT
 	Statically configuring one to one mapping of private IP addr to public IP addr
 	inside local ip add is mapped to inside global ip addr
-	inside local - IP addr from the perspective of the local network - private IP
-	inside global - IP addr of the inside host from perspective of the outside - public IP
+	inside local - IP addr from the perspective of the local network - private IP of src
+	inside global - IP addr of the inside host from perspective of the outside - public IP of src
 	outside local - IP addr of outside host from perspective of the local network 
 	outside global - ip addr of outside host from perspective of outside network
 		These two are usually the same
@@ -1878,7 +1887,7 @@ Queue/Scheduler
 	Prioritization allows the schedule to give certain queues more priority than others
 	Class Based Weighted Fair Queuing -CBWFQ
 		Weighted round robin while guaranteeing each queue a certain percentage of the int bandwidth
-	Low Latency Queuing
+	Low Latency Queuing - LLQ
 		Designates one or more queue as strict prioirty queues
 		If traffic is in the queue, they scheduler will always take the next packet
 		Might starve other queues
@@ -2219,6 +2228,7 @@ Lightweight AP Modes
 	Se-Connect - Dedicated to RF spectrum analysis
 	Bridge/Mesh Mode - Dedicated bridge between site and can be made a mesh
 	Flex plus bridge - Flex connect and bridge together
+	Lightweight - Allows APs to be managed by Cisco WLC
 Cloud based AP
 	Autonomous AP centrally managed in the cloud
 	Automatically configure when connected to  network
