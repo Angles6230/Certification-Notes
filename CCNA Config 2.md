@@ -216,7 +216,6 @@ Apply to the interface
 `R1(config)#int g0/0/0
 `R1(config-if)#service-policy output [policy name]
 
-
 ### Port Security
 `SW1(config)#int ra f0/1-3
 Set how long the MAC addresses stay on
@@ -231,6 +230,8 @@ Set maximum mac addresses valid for this port
 `SW1(config-if-range)#switchport port-security maximum [#]
 Set so port security dynamically learns mac addr
 `SW1(config-if-range)#switchport port-security mac-address sticky
+
+
 
 ## Routing
 Enable IP routing on layer 3 switch

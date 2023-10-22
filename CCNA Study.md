@@ -2369,18 +2369,24 @@ Authentication
 			802.1x - port based NAC
 				Supplicant - client
 				Authenticator - AP
-				Authentication Server - Device that recieves client creds and permits/denies access
+				Authentication Server - Device that receives client creds and permits/denies access
+				In This model, Supplicant open auths to Authenticator, but to get access to network EAP auth is used
 		Lightweight EAP (LEAP)
 			Username and password to authenticate
 			Mutual Auth by challenge phrase from client and server
 			Dynamic WEP keys used, change frequently
+			Considered vulnerable
+			Used to replace WEP
+			Cisco developed
 		EAP-FAST(EAP Flex Authentication via Secure Tunneling)
+			Cisco developed
 			1.Protected Access Credential(PAC) is generated and passed from the server to client
 			2. Secure TLS tunnel is established between client and auth server
 			3. Client and AS communicate inside the tunnel to auth
 		PEAP (Protected EAP)
 			Like EAP-FASt, uses a TLS tunnel
 			Uses a digital certificate instead of PAC
+			Only AS needs Certificate
 		EAP-TLS
 			PEAP only requires the AS to have certificate
 			EAP-TLS requires a cert on the AS and every client
@@ -2391,7 +2397,7 @@ Encryption
 	Devices on the WLAN use the same protocol
 		Each client use a unique encryption/decryption key
 	Group key used by the AP to send traffic to all its clients
-	Encryption Methods
+	Integrity Check Methods
 		Temporal Key Integrity Protocol - (TKIP)
 			MIC is used to protect integrity of messages
 				MIC includes the  sender MAC addr to identify frame sender
@@ -2399,11 +2405,12 @@ Encryption
 			Key mixing algorithm is used to create a unique WEP key for every frame
 			Initialization vector is doubled to 48 bits
 			TKIP sequence number is used to keep track of frames
-		Counter/CBC-MAC Protocol
+		Counter/CBC-MAC Protocol -CCMP
+			Provides Encryption and Integrity
 			Requires hardware
 			AES countermode encryption
 			Uses CBC_MAC as MIC
-		Galois/Counter Mode Protocol 
+		Galois/Counter Mode Protocol - GCMP
 			Allows higher data throughput than CCMP
 			AES countermode encryption
 			GMAC as MIC
@@ -2414,12 +2421,15 @@ Wifi Protected Access
 	WEP
 		RC4
 	WPA
-		TKIP
+		TKIP provides encryption/MIC
+		802.1X auth(enterprise) or PSK(Personal)
 	WPA2
-		CCMP, AES
+		CCMP
+		802.1x(enterprise) or PSK (Personal)
 	WPA3
-		GCMP
-		Protected Management Frames - PMF, protects management frames from eavesdropping.
+		GCMP provides encryption/MIC
+		8021.x or PSK(personal)
+		Protected Management Frames - PMF, protects 802.11 management frames from eavesdropping.
 		SAE - Protects 4 way handshake 
 		Forward secrecy - prevents data from being decrypted after it has been transmitted
 Support two auth modes,
@@ -2427,6 +2437,8 @@ Support two auth modes,
 		4 way handshake is used for authentication, PSK is used to generate encryption keys
 	Enterprise Mode - 802.1X used with authentication server
 ### Wireless Configurations
+WLCs only support Static LAG, no PAgP or LACP
+WLC GUI cannot be connected through SSH or Telnet, Must use HTTP or HTTPS
 WLC Ports are physical ports that cables connect to
 	Service port 
 		Dedicated mangement port
