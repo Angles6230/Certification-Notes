@@ -133,7 +133,16 @@ Allow for auto-recovery
 `SW1(config-if)#errdisable recovery cause dhcp-rate-limit`
 
 ### DAI
-
+`SW1(config)#ip arp inspection vlan 1
+`SW1(config)#interface g0/0
+`SW1(config-if)#ip arp inspection trust
+Sets the arp rate to 25 packets per 2 seconds, burst interval is optional, default is 1s
+`SW1(config-if)#ip arp inspection limit rate [25] burst interval [2]
+Reenabling interfaces
+`shut/no shut`
+`SW1(config)#errdisable recovery cause arp-inspection`
+Checks the arp mesg fields, can utilize one, two or three in one cmd
+`SW1(config)#ip arp inspection validate [dst-mac | ip |src-mac]
 ### SNMP
 Create SNMP communities
 	`R1(config)#snmp-server community [name] [ro(read only)|rw (read-write)]`
@@ -344,3 +353,5 @@ Show logging
 Shows NAT translations aka src-dest
 `R1#show ip nat translations
 `R1#show ip nat statistics`
+`SW1#show ip arp inspection interfaces`
+``SW1#show ip arp inspection`

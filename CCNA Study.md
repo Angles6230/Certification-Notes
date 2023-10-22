@@ -1944,7 +1944,7 @@ If DHCP received on untrusted
 			If match forward, else discard
 		Release/Decline - Check if packet SRC IP nad receiving int match the entry in the DHCP snooping binding table 
 			if match forward, else discard
-DHCP Snooping Binding Table - when a client successfully leases an IP Addr from a server, create a new entry in the DHCP snooping, binding table. 
+DHCP Snooping Binding Table - when a client successfully leases an IP Addr from a server, create a new entry in the DHCP snooping binding table. 
 Rate limitng - Can limit the rate at whcih DHCP msgs are allowe to enter an interface
 	Over the limit will lead to errdisabled
 DHCP Option 82
@@ -1955,9 +1955,17 @@ DHCP Option 82
 Feature of SW used to filter ARP msgs recieved on untrusted ports
 Best practice -  Ports connected to other network devices should be trusted, end hosts untrusted
 DAI inspects the sender MAC and sender IP field of ARP msgs recieved on untrusted ports and checks that there is a matching entry in the DHCP snooping binding table.
+DAI does not inspect on trusted ports
 ARP ACLs can be configured to map IP addr/MAC addr for DAI to check
 	useful for hosts that don't use DHCP
-DAI rate limiting is enabled on untrusted ports up to 15 packets per second
+DAI default rate limiting is enabled on untrusted ports up to 15 packets per second
+DAI burst interval - allows you to configure rate limiting like "x packets per y seconds"
+Gratuitous ARP = ARP reply sent without receiving an arp request
+	Sent to broadcast MAC addresses
+Rate limiting limits the rate ARP msgs are received on an interface, not sent
+DAI checks sender IP and MAC against DHCP snooping binding table and ARP ACLs
+
+
 ### LAN Architectures
 Campus LAN Design
 Two tier
@@ -1965,8 +1973,8 @@ Two tier
 		end hosts connect to
 		Lots of ports
 		QoS marking is done here
-		Security services are performed here
-		Connection between Access are layer 2 aka Spanning tree
+		Security services are performed here like DHCP Snooping and DAI
+		Connection between Access are layer 2 aka Spanning tree is used to prevent looping
 	Distribution
 		Aggregate connections from access layer switches
 		Typically boarder between layer 2 and layer 3
