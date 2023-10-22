@@ -1,10 +1,3 @@
-Dynamic arp inspection
-Cisco WLAN levels
-Cisco WLC
-Cisco ACI
-frame processing methods - ethernet?
-cut thru processing
-store and fwd
-cut thrugh
-micro segmentation??
-data collisions
+Ether channel
+OSPF cost metric calc
+Configuring management of cisco devices from web browser

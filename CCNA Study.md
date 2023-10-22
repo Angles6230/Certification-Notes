@@ -392,7 +392,7 @@ VLAN
 		Security
 PCs are oblivious to VLANs they only see ethernet
 Trunks
-	Special type of link between 2 switches to communicate VLAn information between them
+	Special type of link between 2 switches to communicate VLAN information between them
 	ISL - interswitch link
 	802.1q - industry standard 
 	Allow multiple VLANs to traverse a link
@@ -1070,7 +1070,7 @@ Layer 3 Etherchannel
 Three methods of EtherChannel
 	Port Aggregation Protocol (PAgP)
 		Cisco proprietary
-		dyanmically negotiates creation/main of etherchannel
+		dynamically negotiates creation/main of etherchannel
 	Link Aggregation control Protocol (LACP)
 		Industry Standard
 		Can be used to form Etherchannels with other companies
@@ -1283,6 +1283,7 @@ OSPF Neighbors
 	Once OSPF is actived on an interface, the router starts sending OSPF hello messages
 		Default hello timer is 10s on Ethernet/ Dead timer is 40s
 		Hello Msgs are multicast to 224.0.0.5
+			OSPF hello packets are used for neighbor adjacency and DR/BDR election
 	Neighbor States
 		(Damn Its 2, Send Emails Later Fucker)
 		OSPF is activated on interface
@@ -1323,6 +1324,7 @@ OSPF Message Types
 	3 - Link State Request (LSR) - Request Specific LSA from neighbor
 	4 - Link State Update (LSU) - Send specific LSA to neighbor
 	5 - Link State Acknowledgement(LSAck) - Used to Ack the router received a msg
+	After network convergence has occured - Keepalive packets are sent a regular intervals between routers
 OSPF network types
 	Broadcast
 		Enabled by default on Ethernet and FDDI
@@ -1553,6 +1555,7 @@ IPv6 Route types
 		When a static route's AD is set to higher than main route
 		Used as a backup
 ### ACLs
+![[2021-12-30_14-37-00-6237f02d1287cc812d1d0a4957ac7410.png]]
 ACLs are configured in the global config mode
 ACLs MUST be applied to the interface to be in effect
 	One ACL per interface per direction
@@ -2248,6 +2251,7 @@ Outdoor Bridge
 	Data 
 	Frame Check Sequence - check for errors in frame
 802.11
+	Client initiates and make roaming decisions for themselves
 	802.11 Association Process
 		Three states
 			Not auth, not associ
@@ -2290,7 +2294,7 @@ Wireless AP Deployment methods
 	Lightweight 
 		Handle realtime operations like transmitting/receiving traffic, encrypt/decrypt traffic
 		Management functions is handled by the WLC
-			RF Management, security/QoS management, Client auth, roaming etc
+			RF Management, security/QoS management, Client auth,
 		Called Split-MAC architecture
 		WLC used to centrally configure the lightweight APs
 			WLC and Lightweight auth each other using digital certs
@@ -2470,6 +2474,8 @@ Layer 3 Security
 	Web authentication - Guest LANs Username and passwd through network
 	Web passthrough - Direct access for guest lans without user/pass
 ### Network Automation
+![[2021-12-30_15-22-15-7653a9fa6d976deffa3a0ff8e3649b9e 1.png]]
+![[2021-12-30_15-24-10-328a119ac8271f69bf1a8418049dead2 2.png]]
 Advantages
 	Test and deploy
 	Centralized management
@@ -2516,6 +2522,7 @@ JSON
 	Open file format
 	Open Data interchange format
 	Whitespace is insignificant
+	Start and stop are `[]`
 	Four primitive data types
 		String
 			Text value - surrounded by double quotes " "
@@ -2605,6 +2612,7 @@ REST
 		Code on demand
 ### Software Defined Networking
 ![[2021-12-30_15-02-09-937ce4d913819135252614e55ffcd74e 1.png]]
+![[2021-12-30_15-15-54-29aef91d882ac0abca617da3b5993070.png]]
 Moves control plane from physical individual devices to an abstract software layer(Control layer)
 Decouples control plane and data plane
 SDN controller is centralized control plane with policy engine
