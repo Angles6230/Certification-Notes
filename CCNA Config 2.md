@@ -292,7 +292,14 @@ Configure DNS server on router
 	`R1(config)#ip name-server [dnssvr IP]
 Associate names with host IP
 	`R1(config)#ip host [name] [host ip]`
-### NAT
+### VRF
+Create VRF
+`R1(config)#ip vrf [VRF name]
+Assign interface to VRF
+`R1(config)#int g0/0
+`R1(config-if)#ip vrf forwarding [VRF name]
+Old assigned IP addr is now removed, you need to reapply
+`R1(config-if)#ip addr 192.168.1.1 255.255.255.252
 
 ## Access List
 ### Standard ACLs
@@ -323,6 +330,9 @@ Enable logging to syslog server
 Set severity of syslog msgs sent to server
 	``R1(config)#logging trap [severity]`
 # Show commands
+Show interfaces
+`show ip interfaces brief`
+`show interfaces`
 `show etherchannel summary
 show etherchannel load balancing
 	`show etherchannel load-balance
@@ -355,3 +365,5 @@ Shows NAT translations aka src-dest
 `R1#show ip nat statistics`
 `SW1#show ip arp inspection interfaces`
 ``SW1#show ip arp inspection`
+`show ip vrf`
+`show ip route vrf [vrf name]`

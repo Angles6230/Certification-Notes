@@ -2106,13 +2106,26 @@ Cloud IT deployments
 	Resource Pooling
 		Provider's resources are pooled to server multiple consumers, physical and virtual resources dynamically assigned according to demand
 	Rapid elasticity
-		
-	Measured Service
+		Capabilities can be elastically provisioned and released
+	Measured Service 
+		Cloud systems automatically control and optimize resource use by measuring capability
+		Cust and Provider can see their metrics
+Three Service models
+	IaaS
+		Consumer is provided with the resources to do whatever they want
+		Amazon EC2
+	PaaS
+		Consumer does not control the underlying infra but manages deployed applications 
+		Customers can use to develop their own applications
+	SaaS
+		Software, Consumer does not manage or control the underlying cloud infra
+		M365
+		GSuite
 Containers
 	Software packages that contain an App and all dependencies for the contained app to run
-	Run on a container engine i.e. Docker
+	Runs on top of a container engine i.e. Docker Engine
 	Lightweight, include only the dependencies required to run the specific App
-	Do not need a OS vs VM which needs an OS
+	VMs need to run an OS on each VM, Containers can run only the app and dependencies
 Container Orchestrator 
 	Software platform for automating the deployment, management, scaling of containers
 	i.e. Kubernetes, Docker Swarm
@@ -2128,17 +2141,26 @@ Container Orchestrator
 ### VRF
 Virtual Routing and Forwarding
 Used to divide a single router into multiple virtual routers
-L3 int are configured to be ina  specific VRF instance
+Commonly used to facilitate 
+L3 int are configured to be in a specific VRF instance
 Layer 3 concept
-VRF - Commonly used yb service providers to allow one device to carry traffic from multiple cusotmers
+Allows this by having the router build multiple separate routing tables
+Traffic in one VRF cannot be forwarded out of an interface in another VRF
+	VRF leaking can be configured to allow traffic between VRFs
+VRF - Commonly used by service providers to allow one device to carry traffic from multiple customers
 	Each customers traffic is isolated from the others
 	IPs can overlap without any issue
+		Ex. Customer 1 on VRF 1 can use 10.0.0.0/24
+		Cust 2 on VRF 2 can also use 10.0.0.0/24
 With VRF you don't get Interface IP overlaps
 	Without VRF two interfaces on the same router cannot be in the same subnet
-IPs addr need to be reconfigured when you assign an interface to a VRF
+	With VRF 2 interfaces on the same router can be in the same subnet
+IPs addr needs to be reconfigured when you assign an interface to a VRF
 Show ip route shows all routes
 show ip route vrf customer
-	Shows VRF's routing table\
+	Shows VRF's routing table
+When pinging you need to specify the vrf
+	`ping vrf customer1 192.168.1.1
 ### Wireless Fundamentals
 Wireless Networks
 	All devices within range recieve all frames
@@ -2163,12 +2185,14 @@ Radio Frequency
 		Best Channels are 1, 6, 11
 	5 Ghz
 Service Sets
+	All devices in a service set share the same SSID
 	Independent
 		ad-hoc
 		Two or more devices without an AP
 		airdrop
 	Infrastructure
 		Basic
+			One AP
 			Clients connect to each other via AP but not directly to each other
 			Other APs can use the same SSId but not the same BSSID(Basic Service Set ID)
 			BSSID is basically MAC Addr
@@ -2177,6 +2201,8 @@ Service Sets
 		Extended
 			Multiple APs
 			Each BSS uses the same SSID but different BSSID
+			SSID provides the network name
+			BSSID identifies the actual access point
 			Clients seemlessly pass between APs without having to reconnect
 				Called Roaming
 			10-15% Overlap between BSAs
@@ -2185,23 +2211,42 @@ Service Sets
 		Use 2 radios
 			One to provide BSS to wireless clients
 			One to form backhaul network to bridge from AP to AP
-		One AP connected t wired network - Root AP -RAP
-		Other APs are called Mesh AP
+		One AP connected to wired network - Root AP -RAP
+		Other APs are called Mesh AP -MAPs
 All Devices in the same service set share the same SSID(Service Set ID)
 	Does not need to be unique
 Upstream wired network is called DS(Distribution System)
 Each BSS/ESS is mapped to a VLAN on the wired network
-Possible for an AP to provide multiple wireless LAN to VLAN and connected via a Trunk
+Possible for an AP to provide multiple WLANs, each with unique SSID
+WLAN is mapped to seperate VLAN and connected to wired network thru a trunk
 Repeater
 	AP in repeater mode can be used to extend the range of the BSS
 	AP retransmits any signal it gets
 		Single radio repeater must operate on the same channel as the ap but lower thruput
 		two radio repeater cna recieve on one channel and transmit on another
 Workgroup bridge - WGB
-	Wirless client of another AP and can be used to connect a wired device to a wireless network
+	Wireless client of another AP and can be used to connect a wired device to a wireless network
+	uWGB - 802.11 std 
+	WGB- cisco proprietary version
 Outdoor Bridge
 	use specialized antennas taht focus most ofthe signal power in one direction
 ### Wireless Architecture
+802.11 Frame 
+`[frame control|duration/id|Address1|addr2|addr3|SeqCtrl|addr4|QoS|HT control|Data|FCS]`
+	Frame control - Provides information such as msg type and subtype
+	Duration ID - Indicate time in microsec that the channel will be dedicated for transmission of the frame or identifier for the association
+	Addresses - Up to 4 addresses can be rpesent
+		Destination Addr - Final recipient of frame
+		Source Address - Original Sender
+		Receiver Address - Immediate recipient
+		Transmitter Address - Immediate Sender
+	Sequence Control - Used to reassemble fragments and eliminate duplicate frames
+	QoS Control - Used in QoS to prioritize traffic
+	High Throughput control - used to enable high thruput
+		802.11n - High Thruput Wifi
+		802.11ac - Very High Thruput Wifi
+	Data 
+	Frame Check Sequence - check for errors in frame
 802.11
 	802.11 Association Process
 		Three states
@@ -2240,22 +2285,28 @@ Wireless AP Deployment methods
 	Autonomous
 		Self contained systems that don't rely on WLC
 		Configured individually, no central management
-		Lightweight 
+		Autonomous APs connect to the wired network with a trunk link
+		Data traffic in autonomous AP data goes directly to target
+	Lightweight 
 		Handle realtime operations like transmitting/receiving traffic, encrypt/decrypt traffic
 		Management functions is handled by the WLC
 			RF Management, security/QoS management, Client auth, roaming etc
 		Called Split-MAC architecture
 		WLC used to centrally configure the lightweight APs
 			WLC and Lightweight auth each other using digital certs
-		WLC and LW AP use a protocol called Contro lAnd PRovisioning of wireless access points (CAPWAP) to communicate
+		WLC and LW AP use a protocol called Control And Provisioning of wireless access points (CAPWAP) to communicate
 			Two tunnels created between each AP and the WLC
-				Control tunnel 
+				Control tunnel UDP 5246
 					used to config the AP and control/manage operations
 					All traffic is encrypted by default
-				Data tunnel
+				Data tunnel UDP 5247
 					Traffic from wireless client is sent through this tunnel to the WLC
+					It does not go directly to wired network
 					Tunnel traffic is not encrypted by default
-						Encrupted with Datagram Transport Layer Security
+						Encrypted with Datagram Transport Layer Security
+						DTLS uses UDP
+		Due to being tunneled to WLC, APs connect to access ports
+		Trunk is needed to connect WLC to wired network
 	Benefits to Split MAC Architecture
 		Scalability - WLC simpler to build/support a network 
 		Dynamic Channel assignment - WLC can automatically select the channel for each AP
@@ -2269,21 +2320,22 @@ Lightweight AP Modes
 	FlexConnect- Offers one or more BSS for clients to associate with
 		Allows AP to locally switch traffic between wired and wireless networks if tunnels to WLC go down
 	Sniffer - Dedicated to capturing 802.11 frames and sending to a device running wireshark
-	Monitor - Receiving 802.11 frames to detect rogue devices
+	Monitor - Receiving 802.11 frames to detect rogue devices, can de-auth rouge devices
+		Rouge Detector - Does not use radio, listens to traffic on wired network, receives a list of suspected rogue clients, correlates ARP msgs on wired net and info from WLC to detect rogue devices
 	Se-Connect - Dedicated to RF spectrum analysis
 	Bridge/Mesh Mode - Dedicated bridge between site and can be made a mesh
 	Flex plus bridge - Flex connect and bridge together
-	Lightweight - Allows APs to be managed by Cisco WLC
 Cloud based AP
 	Autonomous AP centrally managed in the cloud
 	Automatically configure when connected to  network
 	Cisco Meraki
 		Dashbaord can be used to configure APs, monitor the network, generate performance reports
 		Like WLC
-	However Data traffic is not sent to the cloud, only control/management info is sent to cloud
+		Meraki tells each ap what to do
+		However Data traffic is not sent to the cloud, only control/management info is sent to cloud 
 		Data traffic is sent directly to wired connection
 WLC Deployment models
-	Unified - WLc is hardware in the central locaiton of the network
+	Unified - WLC is hardware in the central locaiton of the network
 		Support up to 6000 APs
 		Suitable for large enterprise campus
 	Cloud-Based - WLC is a VM running on a server
