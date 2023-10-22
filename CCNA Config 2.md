@@ -119,6 +119,21 @@ Configure router as a dhcp relay agent
 	Configure on the interface closest to the DHCP server
 	``R1(config)# int g0/1
 	`R1(config-if)#ip helper-address [DHCP server address]`
+### DHCP Snooping
+Enable DHCP snooping globally
+`SW1(config)#ip dhcp snooping 
+Enable it on a vlan
+`SW1(config)#ip dhcp snooping vlan 1
+Apply on interface
+`SW1(config)#int g0/2
+`SW1(config-if)#ip dhcp snooping trust
+Disable DHCP relay 
+`SW1(config)#no ip dhcp snooping information option
+Allow for auto-recovery
+`SW1(config-if)#errdisable recovery cause dhcp-rate-limit`
+
+### DAI
+
 ### SNMP
 Create SNMP communities
 	`R1(config)#snmp-server community [name] [ro(read only)|rw (read-write)]`
@@ -174,9 +189,40 @@ Configure ROAS
 	`R1(config-subif)#ip add 192.168.10.1 255.255.255.0`
 	`R1(config-subif)#encapsulation dot1q 10
 ### QoS
-To identify QoS we use class map
+Identify what type of traffic you want to apply QoS
 `R1(config)#class-map [Class map name]`
 `R1(config-cmap)#match protocol [https]
+Specify what kind of treatment you want to give to each type of traffic
+`R1(config)#policy-map [policyname]
+Apply the previously created classmapto the policy
+`R1(config-pmap)#class [class map]
+Tell it what to do with the traffic
+This will mark any HTTPS paccket with a dscp value of 31
+`R1(config-pmap-c)#set ip dscp [AF31]
+Specify how much of bandwidth to reserve for it
+`R1(config-pmap-c)#priority percent 10
+If it is not a priority queue
+`R1(config-pmap-c)#bandwidth percent 10
+Apply to the interface
+`R1(config)#int g0/0/0
+`R1(config-if)#service-policy output [policy name]
+
+
+### Port Security
+`SW1(config)#int ra f0/1-3
+Set how long the MAC addresses stay on
+`SW1(config-if-range)#switchport port-security aging time 60
+Portsecurity can only be enabled on access or trunk port
+`SW1(config-if-range)#switchport mode access
+Enable port security
+`SW1(config-if-range)#switchport port-security
+Set the violation mode
+`SW1(config-if-range)#switchport port-security violation [shutdown|restrict|protect]
+Set maximum mac addresses valid for this port
+`SW1(config-if-range)#switchport port-security maximum [#]
+Set so port security dynamically learns mac addr
+`SW1(config-if-range)#switchport port-security mac-address sticky
+
 ## Routing
 Enable IP routing on layer 3 switch
 	`DSW1(config)# ip routing`

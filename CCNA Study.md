@@ -1871,6 +1871,7 @@ Classification - organizes network traffic(PAckets) into traffic classes(categor
 			6 - Internetwork control
 			7 - Network control
 		Differentiated Services Code Point (DSCP)
+		Provides per hop behaviors
 			Default Forwarding (DF) - best effort traffic
 			Expedited Forwarding (EF) - low loss/jitter/latency - voice
 			Assured Forwarding(AF) - set of 12 std values
@@ -1895,6 +1896,7 @@ Traffic Shaping - buffers traffic in a queue if traffic rate goes over the confi
 Traffic policing - drops traffic if the traffic rate goes over the configured rate
 	Burst traffic can be configured to allow traffic over a short period of time
 		instead of a stream it is sent in bursts
+		
 ### Port Security
 Allows you to control whcih SRC MAC addr are allowed to enter the SWport
 When you enable port security with default settings,
@@ -1903,6 +1905,7 @@ When you enable port security with default settings,
 Can change max num of MAC addr allowed
 Can by dynamically learned or manually configured
 Port-security can only be enabled on swi mod acc or swi mod trunk
+	Cannot be using DTP
 Secure-up = port security is up and admin up
 If a port is shutdown you need to shutdown then noshut it aka reset it
 Err-disable recovery
@@ -1947,6 +1950,7 @@ Rate limitng - Can limit the rate at whcih DHCP msgs are allowe to enter an inte
 DHCP Option 82
 	Provides additional information about whcih DHCP relay agent received the client's msgs on which interface
 	By default, cisco sw will add opt 82 to dhcp msgs they receive from clients even if its not a dhcp relay agent
+		This can cause switches to drop dhcp msgs with opt 82 
 ### Dynamic ARP Inspection
 Feature of SW used to filter ARP msgs recieved on untrusted ports
 Best practice -  Ports connected to other network devices should be trusted, end hosts untrusted
