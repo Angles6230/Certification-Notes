@@ -2439,52 +2439,91 @@ Support two auth modes,
 ### Wireless Configurations
 WLCs only support Static LAG, no PAgP or LACP
 WLC GUI cannot be connected through SSH or Telnet, Must use HTTP or HTTPS
+SVI for each vlan - default gateway for the subnets
+Option 43 IP XXXX - Used to tell APs the address of their WLC
+If the Regulatory domain of the country specified in the WLC config doesnt match the regulatory domain of the AP, the AP will not be able to join to the WLC
+Auto RF - allows WLC to automatically select which channels to use and how much power to use
+WLC GUI
+	Controller Tab 
+		Interfaces - logical interfaces on WLC
+		Port- physical port
 WLC Ports are physical ports that cables connect to
 	Service port 
-		Dedicated mangement port
+		Dedicated management port
+		Only supports one VLAN
+		Must connect to switch access port
 	distribution system port
 		network ports that connect to the distribution system(wired network)
 		Used for data traffic
+		Usually connected to trunk ports
 	console port 
 	Redundancy port - used to connect to another WLC to form a HA pair
 WLC interfaces are logical interfaces within the WLC
-Static Interfaces
-	Management interface
-		Management traffic such as telnet, ssh, http, radius auth
-		CAPWAP is formed to/from here
-		Communicates wtih other WLCs
-	Redundancy management interface
-		Standby WLC management
-	Virtual Interface
-		Used when communicating with wireless clients to relay DHCP requests, perform client web auth etc
-	Service Port interface
-		Interface is bound to it
-		for out of band management
-		Physical interface
-		Only interface available while booting
-Dynamic Interface
-	Used to map WLAN to VLAN
-		Traffic from internal WLAN will be sent to wired network from WLC's internal dynamic VLAN interface
-	Used for client data
-	User defined
+	Static Interfaces
+		Management interface
+			Management traffic such as telnet, ssh, http, radius auth
+			CAPWAP is formed to/from here
+			Communicates with other WLCs
+		Redundancy management interface
+			Standby WLC management
+		Virtual Interface
+			Used when communicating with wireless clients to relay DHCP requests, perform client web auth etc
+		Service Port interface
+			Interface is bound to it
+			for out of band management
+			Physical interface
+			Only interface available while booting
+	Dynamic Interface
+		Used to map WLAN to VLAN
+			Traffic from internal WLAN will be sent to wired network from WLC's internal dynamic VLAN interface
+		Used for client data
+		User defined
 Lightweight Access Point(LAP)
 	When there isnt a centralized Wireless LAN Controller(WLC), you can manage each individual AP as it is booted up into LAP mode
 	Default of cisco WAPs
 ### Cisco WLCs
-Layer 2 security features
-	None - Open auth
-	WPA+WPA2 - 
-	802.1x - EAP with dynamic WEP
-	Static WEP - static shared WEP
-	Static WEP+ 802.1x - Shared WEP OR EAP
-	CKIP - Enables Layer 2 security using CKIP
-	None+ EAP Passthrough - Uses open auth combined with remote EAP Auth
-Layer 3 Security
-	None - Disables regardless of Layer 2 selection
-	IPSec  - 
-	VPN Pass-through - Allows client to establish connection with specific VPN server
-	Web authentication - Guest LANs Username and passwd through network
-	Web passthrough - Direct access for guest lans without user/pass
+WLAN tab
+	Creating a new WLAN
+		click new, 
+		Select type of WLAN
+		Profile Name
+		SSID 
+		WLAN ID
+	General Tab
+		Change interface 
+		SSID change
+	Security Tab
+		Layer 2 security features
+			None - Open auth
+			WPA+WPA2 - 
+			802.1x - EAP with dynamic WEP
+			Static WEP - static shared WEP
+			Static WEP+ 802.1x - Shared WEP OR EAP
+			CKIP - Enables Layer 2 security using CKIP
+			None+ EAP Passthrough - Uses open auth combined with remote EAP Auth
+			PSK can be ASCII or Hex
+		Layer 3 Security
+			None - Disables regardless of Layer 2 selection
+			IPSec  - 
+			VPN Pass-through - Allows client to establish connection with specific VPN server
+			Web authentication - Username and passwd through network
+			Web passthrough - Direct access for guest lans without user/pass, warning or statement
+			Conditional/Splash web redirect- require 802.1x layer 2 auth
+	QoS 
+		Platinum - Voice
+		Gold - Video
+		Silver  - Best effort/Default
+		Bronze - Background
+Clients Tab
+	Shows IP addr
+	AP associated with
+	SSID using
+Wireless Tabs
+	List of APs joined on the WLC
+CPU ACLs
+	Used to limit access to the cPU of the WLC
+	Limits whcih devices can connect via HTTP/S, Telnet/SSH, retrieve information thru SNMP
+	Only affects things that target the WLC
 ### Network Automation
 ![[2021-12-30_15-22-15-7653a9fa6d976deffa3a0ff8e3649b9e 1.png]]
 ![[2021-12-30_15-24-10-328a119ac8271f69bf1a8418049dead2 2.png]]
