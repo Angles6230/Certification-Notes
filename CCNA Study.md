@@ -1989,6 +1989,7 @@ Three Tier Campus LAN Design
 		Focus is speed( Fast transport)
 		CPU intensive operations such as security, QoS should be avoided at this layer
 		Core SW connect to the routers
+		Layer 3 only
 Data Directions
 	North-south
 		Access to distribution to core to internet
@@ -2016,22 +2017,30 @@ WAN connection via Ethernet/Fiber
 WAN connection over shared infrastructure (Internet VPN)
 Leased line 
 	Dedicated physical link
-	Serial connections such as PPP or HDLC
+	Serial connections such as PPP or HDLC encap 
 MPLS
 	Multi Protocol Label Switching
 	Shared infra
-	Muliple VPNs created using Labels
+	Multiple VPNs created over the shared infrastructure using Labels
 		Terms
 			CE - Cusomter Edge Router
 			PE - Provider Edge Router
 			P Router - Provider Core Router
 	MPLS/PE/P routers use Labels instead of IP to route traffic
+	When PE routers receive frames from CE routers, they add a label to the frame
+		label is located between layer 2 eth header and layer 3 ip header
+		Sometimes called Layer 2.5 protocol
+		Labels are used to forward packet
 	CE routers does not use MPLS
-	When Using MPLS Layer 3 VPN CE and PE routers peer using OSPF
+	When Using MPLS Layer 3 VPN CE and PE routers peer 
+	With Dynamic routing
+		Office A CE connects with local PE and Office B connects with local PE, through OSPF all 4 routers share information
 		Office A's CE will learn about Office B's routes through OSPF peering
+	Or in a static routing - the PE connection will just be the next home and Service provider takes it from there.
 	In a Layer 2 MPLS VPN, CE and PE routers do not form peerings
 		in this topology, the logical tolopogy is the PE routers do not exist, it looks like a switch
 		The CE routers peer with each other
+		CE WAN interfaces will be in the same subnet
 DSL
 	Digital Subscriber line
 	Provides internet connectivity over phone lines and can share the same phone line. 
@@ -2055,11 +2064,18 @@ Site to Site VPN
 					Doesnt support broadcast and multicast traffic, only unicast
 					Configuring full mesh of tunnels is a labor intensive task, 
 						Solved with DMVPN
+	GRE
+		Creates tunnels but does not encrypt
+		Able to encapsulate wide variety of Layer 3 protocols
 	GRE over IPsec
 		GRE does not encrypt the original packet so no security
 			Advantage of being able to encap a wide variety of msgs like broadcast and multicast
 		Original packet has GRE header and new IP header, then encrypted and attached a IPsec and IP header
+		`[ip packet] GRE header] IP header]`
+		``[Encrypted]IPSec VPN header] IP header]
+		Flexibility of GRE with security of IPSec
 	DMVPN
+		Cisco Developed
 		Dynamic Multipoint VPN
 		Allows routers to dynamically create a full mesh of IPsec tunnels without having to manually configure every single tunnel
 		1. Config IPsec tunnels to a hub site
@@ -2072,9 +2088,26 @@ Remote Access VPN
 	One end device to site
 ### Virtual Machines
 Hypervisor - used to manage and allowcate hardware resources to each VM
-	Type 1 aka Native or Bare Metal - run directly on top of hardware
+	Type 1 aka Native or Bare Metal - run directly on top of hardware 
+		Also called VMM Virtual machine monitor
+		ESXi
 	Type 2 aka Hosted - Run on top of a Host OS(i.e. Windows)
+		VirtualBox
 Bins/Libs are software libraries needed by the Apps running in each VM
+Traditional IT deployments
+	On Prem
+	Co-location
+Cloud IT deployments
+5 Essential Characterstics
+	On Demand self service
+		Consumer can provision capabilities without needing human interaction from each service provider
+	Broad network access
+		Capabilities are available over the network and accessed through thin or thick clients
+	Resource Pooling
+		Provider's resources are pooled to server multiple consumers, physical and virtual resources dynamically assigned according to demand
+	Rapid elasticity
+		
+	Measured Service
 Containers
 	Software packages that contain an App and all dependencies for the contained app to run
 	Run on a container engine i.e. Docker
