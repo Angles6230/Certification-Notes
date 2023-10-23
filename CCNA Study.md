@@ -156,6 +156,7 @@ APIPA
 	When PC is configured with DHCP but no DHCP server is available
 	PC automatically chooses a IP 169.254.0.0/16 for communication in local segment
 	IP assigned is non routable but communicate on local network
+	Assigned to DHCP clients
 Discontiguous Mask 
 	Non continuous mask
 	11100.1111.00011.1100
@@ -1246,7 +1247,7 @@ Routers flood LSAs until all routers in the OSPF area develop the same map of th
 LSA has an aging time of 30 min
 	Flooded again after the timer expires
 OSPF Router ID
-	OSPF is highest, STP is lowest
+	OSPF is highest(Open - high), STP is lowest(Stop low)
 	Used to identify the OSPF router to neighbors within the same area
 	Determination priority
 		Manually configured RID
@@ -1684,6 +1685,8 @@ SNMP Versions
 	SNMPv2c
 		Allows NMS to retrieve large amts of info with a single request
 		community strings - passwords
+		Inform messages - notify network devices when Traps are recieved
+		64 bit counters
 	SNMPv3
 		Secure version of SNMP that supports strong encryption and authentication
 SNMP Message class
@@ -1733,6 +1736,15 @@ By default Syslog msgs will not be displayed with connected via Telnet/SSH
 	Need a command to be used
 	R1#terminal monitor
 	Must be used everytime you connect via SSH
+**Cisco Default Logging Configuration**
+	• Logging service is enabled
+	• Syslog server is disabled
+	• Syslog default transport is UDP 514
+	• Logging facility is local7
+	• Informational (Level 6) messages and lower enabled
+	• System messages are enabled on console
+	• System messages are disabled on VTY lines (terminal monitor)
+	• System messages are stored in local buffer memory
 ### Secure Shell
 SSH
 Only a single console line so the nuber is always 0
@@ -1799,6 +1811,7 @@ Static NAT
 	outside global - ip addr of outside host from perspective of outside network
 		These two are usually the same
 	If you try to map more than one Private IP to public IP, it will be rejected
+	Allows for remote host to initiate a session from the internet
 Dynamic NAT
 	Router dynamically routes inside local to inside global as needed
 	DHCP for NAT
@@ -1824,11 +1837,12 @@ Allows PC and IP phone to share a single switchport
 Seperate voice traffic and data traffic by using a voice VLAN
 	PC1 will sent traffic untagged
 	SW1 will use CDP to tell PH1 to tag PH1's traffic with VLAN11
-POE
+POE(Power over Ethernet)
 	Allows power sourcing equipment(PSE) to provide power to Powered Devices(PD) over an ethernet cable
 	PSE is usually a SW and PDs are stuff like IP phones
 	When a device is connected to POE-enabled port, the PSE sends low power signals and monitors the response and determines how much power the PD needs
 	Power policing can be configured to prevent a PD from taking too much power.
+	By default Switchport will assign maximum power to connected device
 Made as Cisco Inline Power (ILP)
 QoS is used to manage the following characteristics
 	Bandwidth 
@@ -2443,6 +2457,7 @@ SVI for each vlan - default gateway for the subnets
 Option 43 IP XXXX - Used to tell APs the address of their WLC
 If the Regulatory domain of the country specified in the WLC config doesnt match the regulatory domain of the AP, the AP will not be able to join to the WLC
 Auto RF - allows WLC to automatically select which channels to use and how much power to use
+	Allows for RF cell optimization
 WLC GUI
 	Controller Tab 
 		Interfaces - logical interfaces on WLC
@@ -2573,6 +2588,7 @@ Data Serialization
 	Process of converting data into a standardized format/structure that can be stored
 Serialization - allow us to represent variables with text.
 JSON
+	Less secure, less bandwidth than xml
 	Returns data in form of object that contains key value pairs
 	Open file format
 	Open Data interchange format

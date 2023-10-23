@@ -43,8 +43,7 @@
               }
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -96,7 +95,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "CCNA Config 2.md"
+                "file": "CCNA Study.md"
               }
             }
           },
@@ -129,7 +128,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "CCNA Config 2.md",
+                "file": "CCNA Study.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -146,7 +145,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "CCNA Config 2.md",
+                "file": "CCNA Study.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -181,10 +180,10 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "36e2ade3c5de44f3",
+  "active": "6eff5e1b288b2a55",
   "lastOpenFiles": [
-    "CCNA Study.md",
     "CCNA Config 2.md",
+    "CCNA Study.md",
     "2021-12-30_15-24-10-328a119ac8271f69bf1a8418049dead2 2.png",
     "2021-12-30_15-24-10-328a119ac8271f69bf1a8418049dead2 1.png",
     "2021-12-30_15-22-15-7653a9fa6d976deffa3a0ff8e3649b9e 1.png",

@@ -293,6 +293,10 @@ Configure DNS server on router
 	`R1(config)#ip name-server [dnssvr IP]
 Associate names with host IP
 	`R1(config)#ip host [name] [host ip]`
+Disable DNS services
+	`R1(config)#no ip domain-lookup`
+Configure static mapping
+	`R1(config)#ip host [name] [ipaddr]`
 ### VRF
 Create VRF
 `R1(config)#ip vrf [VRF name]
