@@ -1058,6 +1058,9 @@ EtherChannel load balances based on flows
 		If in different physical interfaces, some frames can arrive out of order
 	If a seperate communication happens it will use different physical interface
 	TL:DR 1 communication uses the same physical interface
+	Purpose
+		Bind physical interfaces into a logical interface
+		Assign protocol Negotiation mode to a physical interface(trunk)
 Layer 2 Etherchannel
 Can change inputs used in the interface selection calculation/Configurable to load balance using the below
 	Src MAC - default
@@ -1114,6 +1117,8 @@ Network Route
 Host route
 	Route to specific host/single address
 	specified with /32 mask
+Directly Connected routes
+	Have an AD of 0, metric of 0
 Floating Static
 	A static route that is configured with higher Admin Dist
 	Made less preferred than routes learned by dynamic routing protocol to the same dst
@@ -2458,6 +2463,12 @@ Option 43 IP XXXX - Used to tell APs the address of their WLC
 If the Regulatory domain of the country specified in the WLC config doesnt match the regulatory domain of the AP, the AP will not be able to join to the WLC
 Auto RF - allows WLC to automatically select which channels to use and how much power to use
 	Allows for RF cell optimization
+WLAN Characteristics
+	• WLAN ID, Profile Name and SSID
+	• Wireless Security: Open, WPA2-PSK, WPA2, Guest
+	• DHCP Source: Controller / Server / Router
+	• Radio settings: 802.11n, 802.11a, 802.11g
+	• Quality of Service: Platinum, Gold, Silver, Bronze
 WLC GUI
 	Controller Tab 
 		Interfaces - logical interfaces on WLC
@@ -2496,6 +2507,7 @@ WLC interfaces are logical interfaces within the WLC
 Lightweight Access Point(LAP)
 	When there isnt a centralized Wireless LAN Controller(WLC), you can manage each individual AP as it is booted up into LAP mode
 	Default of cisco WAPs
+
 ### Cisco WLCs
 Controller Tab
 	Create new interface
@@ -2689,6 +2701,10 @@ Decouples control plane and data plane
 SDN controller is centralized control plane with policy engine
 Network infrastructure provides data plane forwarding
 The control plane decides how data is managed, routed, and processed, while the data plane is responsible for the actual moving of data. This used to be one device(the switch/router) but has been separated. Control plane decides how the packets should be routed, data plane actually does the routing
+Three characteristics of Network overlays
+	Virtual Topology
+	Encapsulation
+	IP address isolation
 SBI - used for comms between controller and network devices it controls
 NBI - allows us to interact with the controller
 Layers
@@ -2738,9 +2754,10 @@ Cisco DNA Center has two main roles
 	SDN controller in SD_Access
 	Network manager in traditional network
 	DNA Center is an application installed on server hardware
-	Uses REST API
+	Uses REST API with JSON
 	Enabled Intent Based Networking(IBN)
 		Allow engineer to communicate intent for network behavior and DNA center will take care of the rest
+	Uses SNMP for information
 ### Ansible, Puppet and Chef
 Configuration Drift
 	individual changes made over the time causes a device config to deviate from the standard
