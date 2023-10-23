@@ -1527,7 +1527,7 @@ Neighbor Discovery Protocol
 		Router Advertisement (RA)
 			Sent to multicast all nodes(broadcast)
 			Router announces its presence
-			Router sends periodically
+			Router sends pegriodically
 			Only routers do this
 SLAAC 
 	Stateless Address Auto-Configuration
@@ -2482,6 +2482,10 @@ Lightweight Access Point(LAP)
 	When there isnt a centralized Wireless LAN Controller(WLC), you can manage each individual AP as it is booted up into LAP mode
 	Default of cisco WAPs
 ### Cisco WLCs
+Controller Tab
+	Create new interface
+	interface name
+	Vlan id
 WLAN tab
 	Creating a new WLAN
 		click new, 
