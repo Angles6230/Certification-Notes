@@ -233,8 +233,14 @@ Set maximum mac addresses valid for this port
 Set so port security dynamically learns mac addr
 `SW1(config-if-range)#switchport port-security mac-address sticky
 
-
-
+### Recovering system with TFTP image
+rommon 1 > tftpdnld
+rommon 2 > IP_ADDRESS=10.10.10.1
+rommon 3 > IP_SUBNET_MASK=255.255.255.0
+rommon 4 > DEFAULT_GATEWAY=10.10.10.1
+rommon 5 > TFTP_SERVER=10.10.10.10
+rommon 6 > TFTP_FILE=c2900-universalk9-mz.SPA.151-4.M4.bin
+rommon 7 > tftpdnld
 ## Routing
 Enable IP routing on layer 3 switch
 	`DSW1(config)# ip routing`
