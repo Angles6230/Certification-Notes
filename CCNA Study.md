@@ -123,6 +123,8 @@ ARP Table
 	Physical Addr - MAC addr
 	Type static - Default entry
 	Type dynamic - learned via ARP
+Won't send an arp request for IPs in different subnet
+	Only send ARP req for default gateway
 #### Ping
 Network utility that is used to test reachability
 Two messages
