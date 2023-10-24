@@ -297,13 +297,19 @@ HSRP Configuration
 		`timers` - hello/hold timers
 		`track` - priority tracking
 ### DNS
-Configure which DNS server to use on router
-	`R1(config)#ip name-server [dnssvr IP]
-Associate names with host IP
-	`R1(config)#ip host [name] [host ip]`
-Disable DNS services
-	`R1(config)#no ip domain-lookup`
-Configure static mapping
+DNS Client
+	Enable DNS
+	`R1(config)#ip domain-lookup`
+	Configure which DNS server to use on router
+		`R1(config)#ip name-server [dnssvr IP]
+	Set primary domain name
+		`R1(config)# ip domain-name [domain name]`
+		Additional DNS
+		`ip domain-list [domain name]`
+DNS Server
+	Configure as DNS server
+	`R1(config)#ip dns server`
+	Create records for resolution
 	`R1(config)#ip host [name] [ipaddr]`
 ### VRF
 Create VRF

@@ -11,6 +11,7 @@ Clients
 	Device that accesses a service made available by a server
 Protocol
 	Set of rules used for communication between devices
+
 #### Networking Devices
 Repeater
 	Layer 1 device - simply amplified and repeated the electrical signal
@@ -27,6 +28,11 @@ Switch
 	Used in LAN
 	Microsegmentation - each host directly connected to switch is now its own collision domain
 	Same broadcast domains as a bridge
+	Switch Operation
+		Whenever frame is received switch will look at src mac
+		Learned MAC will be added to MAC addr table which maps to ports
+		Unicast frame - known MAC addr - send frame out relevant port
+		Broadcast frame or unknown unicast - Flood out of all ports aside from one it received the frame from
 Routers
 	Layer 3 devices
 	Uses IP address table to transport traffic
@@ -51,6 +57,7 @@ Access Point
 Ethernet frame
 	split into header nd trailer
 	`[preamble | Start-of-frame(SOF) | destination addr | src addr | type | data field | FCS`
+	Please suck dick so tanya doesnt fuck
 	header
 		preamble
 			7 bytes long - 8 bits per 1 byte = 56 bits
