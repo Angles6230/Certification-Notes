@@ -8,6 +8,8 @@
 Require login to access line
 `SW2(config-line)#login local
 `SW2(config-line)#exec-timeout 5
+Clear dynamic mac address table
+`SW#clear mac address-table dynamic`
 #### SSH
 Continued from above
 Create Domain name
@@ -289,7 +291,7 @@ HSRP Configuration
 		`timers` - hello/hold timers
 		`track` - priority tracking
 ### DNS
-Configure DNS server on router
+Configure which DNS server to use on router
 	`R1(config)#ip name-server [dnssvr IP]
 Associate names with host IP
 	`R1(config)#ip host [name] [host ip]`

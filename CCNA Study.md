@@ -81,10 +81,11 @@ Ethernet frame
 		64 - 18(header + trailer) = 46
 		If payload is less than 46 bytes, padding bytes are added
 MAC Addr
+	6 octets
 	Burned In address - BIA
-	First 3 bytes are ORganizational Unique Identifier (OUI)
+	First 3 octets are ORganizational Unique Identifier (OUI)
 		assigned to the company making the device
-	LAst 3 bytes are unique to device itself
+	LAst 3 octets are unique to device itself
 	12 hexdec char
 Types of frame
 #### MAC address
@@ -2433,7 +2434,7 @@ Encryption
 			Allows higher data throughput than CCMP
 			AES countermode encryption
 			GMAC as MIC
-Integritiy
+Integrity
 	Ensures msg is not modified
 	Message Integrity Check (MIC)
 Wifi Protected Access
