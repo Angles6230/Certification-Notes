@@ -1135,9 +1135,11 @@ Three methods of EtherChannel
 	Port Aggregation Protocol (PAgP)
 		Cisco proprietary
 		dynamically negotiates creation/main of etherchannel
+		Auto/Desirable 
 	Link Aggregation control Protocol (LACP)
 		Industry Standard
 		Can be used to form Etherchannels with other companies
+		Active/Passive
 	Static EtherChannel
 		Protocol isnt used to determine if etherchannel should be formed
 		Interfaces is statically configured to form
@@ -1145,6 +1147,7 @@ Three methods of EtherChannel
 Up to 8 Interfaces to be formed into a single EtherChannel
 	16 in LACP but 8standby/8active
 Etherchannel Modes
+P is not Passive
 	PAgP
 		Auto 
 			Auto + Auto = no ether
@@ -1171,6 +1174,12 @@ Layer 3 EtherChannel can load balance based on a variety of options.
 	• src-dst-mac
 	• src-dst-ip
 	• src-dst-port
+Multi-Chassis Etherchannel
+	single port channel going to two different switches
+	however both switches must have same Etherchannel config
+	Available on StackWise, VSS, vPC
+		Stackwise uses special cables
+		vPC config'd as two seperate switches but when you do matching config you can have shared Portchannel
 ### Dynamic Routing
 Network Route
 	Route to a network/subnet
@@ -1348,6 +1357,7 @@ OSPF Metric - Cost
 	Reference band/int band
 	Default is 100mbps
 	Does not go lower than 1 cost
+		Treats all costs faster than 1 are the same
 	Total Metric is All costs added together
 OSPF Neighbors
 	Main point of OSPF 
@@ -1480,6 +1490,12 @@ Types of FHRP
 		Virtual MAC Address
 			V1 0000.0c07.acXX (XX = group number)
 			V2 0000.0c9f.fxxx (XXX = group number)
+		Virtual Ip and MAC
+			All traffic goes thru active router
+		Active/Standby Pair
+		Can choose which router will be active by setting priority 
+			In event of a tie, highest IP wins
+		You can configure loadbalancing by configuring two different HSRP groups 
 	Virtual Router Redundancy Protocol (VRRP)
 		Open standard
 		Master/Backup
@@ -1500,6 +1516,7 @@ Types of FHRP
 		Load balances among multiple routers within a single subnet
 			Active Virtual Gateway is selected
 			Up to 4 Active Virtal Forwarders are assigned by the AVG
+			Active Active load balancing
 			Each AVG is the default gateway for the portion of hosts in the subnet
 		Multicast - 224.0.0.102
 		MAC addr - 0007.b400.XXYY (XX = GLBP group number, YY = AVF number)
@@ -1545,10 +1562,12 @@ IPv6 Types
 		Private addresses that cannot be used over the internet
 		Can be used freely within internal networks
 		Cannot be routed over the internet/ will be dropped
+		Private IPs
 	Link Local 
 		Automatically generated on IPv6 interfaces
 		FE80::/10
 			Only FE8 
+			11111110
 		Only used for communication within a single subnet
 		USed for routing protocol peerings
 		Next hop addresses for static routes
@@ -2026,6 +2045,7 @@ Sticky MAC addr
 	It will be converted to static
 ### DHCP Snooping
 Filter DHCP msgs on untrusted ports
+This is to ensure the DHCP server is real
 Best practice - uplink ports are trusted, downlink is untrusted
 If DHCP received on trusted port, forward as normal
 If DHCP received on untrusted
@@ -2044,6 +2064,7 @@ DHCP Option 82
 		This can cause switches to drop dhcp msgs with opt 82 
 ### Dynamic ARP Inspection
 Feature of SW used to filter ARP msgs recieved on untrusted ports
+Prevents MiTM IP spoofing by Gratuitious arp, ARP Poisoning
 Best practice -  Ports connected to other network devices should be trusted, end hosts untrusted
 DAI inspects the sender MAC and sender IP field of ARP msgs recieved on untrusted ports and checks that there is a matching entry in the DHCP snooping binding table.
 DAI does not inspect on trusted ports
