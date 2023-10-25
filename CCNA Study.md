@@ -53,6 +53,25 @@ Access Point
 	Autonomous - dont need a WLC
 	Lightweight - register with the WLC and be configured through the WLC
 		WLC will manage the Lightweight APs
+### Cisco Device
+Memory sources
+	ROM
+		POST
+		Load Bootstrap
+			Will look in flash for ios software image to load
+		If IOS img is not found, ROMMON will display
+			Can boot from TFTP or usb
+	Flash
+		Will load first IOS img found in flash by default
+		Override with `boot system` command
+		IOS img
+	NVRAM
+		Startup-config
+		When sys has finished loading IOS system, loads start config 
+		If no start-config is found, setup wizard is loaded
+	RAM
+		Running-config
+
 ### Ethernet LAN Switching
 Ethernet frame
 	split into header nd trailer
@@ -402,6 +421,7 @@ VLAN
 		Flexibility
 		Security
 PCs are oblivious to VLANs they only see ethernet
+VLAN database (vlan.dat) is saved in Flash or NVRAM
 Trunks
 	Special type of link between 2 switches to communicate VLAN information between them
 	ISL - interswitch link
@@ -679,7 +699,7 @@ Options field
 What is routing? 
 	Process that routers use to determine the path that IP packets should take over a network to reach their destination
 Routers store routes to all of their known destinations in a routing table
-Routers look in the routing table to fdind the best route to forward that packet
+Routers look in the routing table to find the best route to forward that packet
 Types of routing
 	Dynamic routing
 	Static routing
@@ -702,6 +722,33 @@ Breaking Dwon the variable subnetted
 ex. 192.168.1.0/24 is variably subnetted, 2 subnets, 2 masks
 	In the routing table there are 2 routes to subnets that fit within the 192.168.1.0/24 network, with two different netmasks (/24, /32)
 Routers drop packets with an unknown destination
+Route Selection
+	1.Longest prefix(most specific)
+	2.AD
+	3.Metric
+Metric - Different paths within the same routing protocol
+	Lower is better
+	If best path is lost, next best route is used
+	RIP - Hop count
+	OSPF - Cost
+	ISIS - Cost
+	EIGRP - Bandwidth and Delay
+Administrative distance - Selecting between different protocols
+	Lower is better
+	Connected - 0
+	Static  - 1
+	eBGP - 20
+	EIGRP - 90
+	 OSPF - 110
+	 ISIS - 115
+	 RIP - 120
+Equal Cost Multi Path (ECMP)
+	If multiple paths to dst have same metric, router will load balance the traffic
+	All routing protocols do this
+	EIGRP is the only routing protocol that can do Unequal cost multi path
+`[AD/Metric]` on routing table
+Passive Interfaces - Allow you to include Ip subnet without sending updates out that interface
+
 ### Static Routing 
 A router knows how to reach its own IP addresses and dest in connected networks but not remote networks
 Default gateway
@@ -718,6 +765,9 @@ Static has code of S
 	When exit interface only, it only displays "Directly connected and the exit interface"
 	if given exit int and next hop IP, it will show via *ip addr* and exit int
 S* means route is a candidate for default route
+Loadbalancing
+	Same destination IP addr and same destination - static
+Floating Static route - Static route with AD higher than the protocol so that it can be set as a backup
 ### Vlans
 Virtual Local Area Network
 Single broadcast domain
@@ -1195,6 +1245,7 @@ Distance Vector IGP
 Uses Hop count as metric
 Max Hop count is 15
 Almost never used in real networks
+ECMP up to 4 paths by default
 RIPv1 and RIPv2 is used for IPv4
 RIPv1
 	Only uses classful addresses
@@ -1203,6 +1254,7 @@ RIPv2
 	Supports VLSM/CIDR
 	Includes subnet mask info
 	msgs are to multicast to 224.0.0.9
+	Supports Authentication
 RIPng - IPv6
 Uses two msg types
 	Request
@@ -1220,6 +1272,9 @@ Passive-interface command
 	tells the router to not send advertisements on this interface
 ### EIGRP
 Uses bandwidth and delay to calculate metric
+ECMP by 4 default up to 16
+Can also do unequal cost multipath
+Metric - lowest segment bandwidth + sum of segment delays
 Feasible Distance - route's metric value to destination(src to dest) 
 	Best metric along a path
 Advertised/Reported Distance - neighbors metric value to destination(hop 1 to dest)
@@ -1619,6 +1674,7 @@ Cisco Discovery Protocol
 	CDPv2 Msgs are sent by default
 	R- Router
 	S - Switch
+	Supports Virtual subinterfaces
 LinkLayer Discovery Protocol
 	LLDP msgs periodically sent to multicase MAC 0180.C200.000E
 	LLDP msgs are sent every 30s
@@ -1626,6 +1682,8 @@ LinkLayer Discovery Protocol
 	LLDP has a reinitialization delay
 		WHen LLDP is enabled it will be delayed by this timer
 		2s by default
+	One device per port
+	Can discover linux
 	R - Router
 	B - Switch
 ### NTP
