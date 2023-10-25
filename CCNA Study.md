@@ -1563,11 +1563,12 @@ IPv6 Types
 		Can be used freely within internal networks
 		Cannot be routed over the internet/ will be dropped
 		Private IPs
+		Begin with FC or FD 
+			11111110
 	Link Local 
 		Automatically generated on IPv6 interfaces
 		FE80::/10
 			Only FE8 
-			11111110
 		Only used for communication within a single subnet
 		USed for routing protocol peerings
 		Next hop addresses for static routes
@@ -1575,6 +1576,7 @@ IPv6 Types
 	Multicast 
 		One to many
 		FFXX - multicast
+		Begin with 11111111
 		FF00::/8 for multicast
 		All nodes - FF02::1 - 224.0.0.1
 		All routers - FF02::2 - 224.0.0.2
@@ -2302,6 +2304,7 @@ Service Sets
 		ad-hoc
 		Two or more devices without an AP
 		airdrop
+		Independent Basic Service Set IBSS
 	Infrastructure
 		Basic
 			One AP
@@ -2328,6 +2331,8 @@ Service Sets
 All Devices in the same service set share the same SSID(Service Set ID)
 	Does not need to be unique
 Upstream wired network is called DS(Distribution System)
+Wireless coverage area of AP is called Basic Service Area(BSA) - Wireless Cell
+WAPs broadcast their information on Beacon frames
 Each BSS/ESS is mapped to a VLAN on the wired network
 Possible for an AP to provide multiple WLANs, each with unique SSID
 WLAN is mapped to seperate VLAN and connected to wired network thru a trunk
@@ -2401,10 +2406,26 @@ Wireless AP Deployment methods
 		Autonomous APs connect to the wired network with a trunk link
 		Data traffic in autonomous AP data goes directly to target
 	Lightweight 
+		Zero touch provisioning
+			They discover the WLC by
+				DHCP option 43 gives ip addr of WLC
+				DNS 'cisco-capwap-controller' resolves the IP address
+				local subnet broadcast
 		Handle realtime operations like transmitting/receiving traffic, encrypt/decrypt traffic
-		Management functions is handled by the WLC
-			RF Management, security/QoS management, Client auth,
 		Called Split-MAC architecture
+		Functions handled by AP
+			Client handshake
+			Beacons
+			Performance monitoring
+			Encryption/Decryption of info from CAPWAP
+			Clients in power save
+		Management functions is handled by the WLC
+			Authentication
+			Roaming Control
+			802.11 to 802.3 communication(wireless to wired)
+			Manage wireless quality and power levels of AP
+			RF, Security, QoS management
+			Can detect rogue APs
 		WLC used to centrally configure the lightweight APs
 			WLC and Lightweight auth each other using digital certs
 		WLC and LW AP use a protocol called Control And Provisioning of wireless access points (CAPWAP) to communicate
@@ -2430,8 +2451,7 @@ Wireless AP Deployment methods
 		Security/QoS management
 Lightweight AP Modes
 	Local - Default mode where AP offers a BSS for clients to associate with
-	FlexConnect- Offers one or more BSS for clients to associate with
-		Allows AP to locally switch traffic between wired and wireless networks if tunnels to WLC go down
+	FlexConnect - Traffic forwarded locally but other functions still go to CAPWAP
 	Sniffer - Dedicated to capturing 802.11 frames and sending to a device running wireshark
 	Monitor - Receiving 802.11 frames to detect rogue devices, can de-auth rouge devices
 		Rouge Detector - Does not use radio, listens to traffic on wired network, receives a list of suspected rogue clients, correlates ARP msgs on wired net and info from WLC to detect rogue devices
