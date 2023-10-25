@@ -368,8 +368,10 @@ Display HSRP
 `show standby`
 See ACLS
 `Show access-lists`
-`show cdp neighbors`
-See everything
+Displays general CDP info - holdtime, packets
+`show cdp`
+`show cdp neighbor`
+See everything incl IP
 `Show cdp neighbors detail`
 `show cdp interface [int]`
 Show NTP

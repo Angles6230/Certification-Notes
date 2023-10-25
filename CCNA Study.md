@@ -1604,6 +1604,7 @@ Share info and discover info about neighboring devices
 	Device type
 CDP is proprietaary
 	Cisco Discovery Protocol
+	Enabled by default usually
 LLDP is industry standard
 	Link Layer Device Protocol
 Considered a security risk 
