@@ -1860,6 +1860,17 @@ SSH config requirements
 	5. Enable sshv2
 		ip ssh version 2
 	6. Configure VTY lines
+### Securing the devices
+Command Hierarchy
+	User exec - >
+	Privileged exec - # (enable)
+	Global config - (config)# - conf t
+	Interface config mode
+Minimal passwd security can be configured at 3 diff levels
+	Console - user exec mode
+	Virtual terminal BTY line - Accessing user exec mode
+	Privileged Exec mode - Enable command
+	
 ### FTP/TFTP
 Most common use of FTP/TFTP is used to upgrade OS of a device
 TFTP
