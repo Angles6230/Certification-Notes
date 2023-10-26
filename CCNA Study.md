@@ -2818,17 +2818,41 @@ SOAP - Simple Object Access Protocol
 	Data format is XML
 ### Model Driven Programmability
 YANG
-NETCONF
-RESTCONF
-gPRC
+	Yet Another Next Generation
+	Data modelling language which provides a stdized way to represent the op and config data of network device
+APIs that describe the protocols and methods for transport of network management data
+![[Pasted image 20231025200700.png]]
+	NETCONF
+		Designed as replacement for SNMP
+		SNMP good for reading, not pushing
+		XML
+		Transport over SSH or TLS
+		Protocol Stack
+			Content - Data to be inspected or changed
+			Operations - eg get-config
+			Messages - RPC Remote Procedure Calls - allows one sys to request another sys to execute code
+			Transport - between client and server
+	RESTCONF
+		Builds on NETCONF
+		XML or JSON encoding
+		HTTPS transport
+		YANG data
+	gPRC
+		Google RPC
+		Transport is HTTP/2
+		
 ### Software Defined Networking
 ![[2021-12-30_15-02-09-937ce4d913819135252614e55ffcd74e 1.png]]
 ![[2021-12-30_15-15-54-29aef91d882ac0abca617da3b5993070.png]]
 Moves control plane from physical individual devices to an abstract software layer(Control layer)
 Decouples control plane and data plane
 SDN controller is centralized control plane with policy engine
+Pure SDN- Control plane runes solely on SDN controller
+Hybrid SDN - Majority of Control plane intel is on SDN controller but network devices retain some control plane intelligence
 Network infrastructure provides data plane forwarding
-The control plane decides how data is managed, routed, and processed, while the data plane is responsible for the actual moving of data. This used to be one device(the switch/router) but has been separated. Control plane decides how the packets should be routed, data plane actually does the routing
+	Data plane - Traffic which is forwarded thru device
+	Control - Makes decisions how to forward traffic
+	Management Plane - Device is configured and monitored ex CLI thru telnet
 Three characteristics of Network overlays
 	Virtual Topology
 	Encapsulation
@@ -2847,11 +2871,22 @@ Layers
 		Contains network devices that are responsible for forwarding messages across the network
 		Network appears as single switch
 		This is the actual layer with physical devices
-Cisco SD-Access is Cisco's SDN for automating campus LANs
+Cisco SDN Controllers
 	Application Centric Infrastructure - ACI - SDN for data center
+		APIC - Application Policy Infrastructure - Main component of ACI
+		Cisco Digital Network Architecture Center (DNA) Center  - Used to manage Campus branch and WAN
+			Intent based networking
+				Transforms traditional manual network into controller network
+				Translates business needs to policies
+			Software delivered approach to automating deployments
+			Network plug and play
+				Auto configuration with DHCP Option 43
 		Network policies are defined here - management layer
-	SD-WAN - SDN for automating WANs
-Cisco Digital Network Architecture Center (DNA) Center is controller
+			SD-WAN - SDN for automating WANs
+			Cisco SD-Access i-method of NAC
+				Security based on user identity not location
+				Authenticated by ISE 
+				Security policy config'd on DNA center
 Fabric
 	Underlay - physical network of the devices and connections 
 		Purpose is to support VXLAN tunnels of the overlay
@@ -2928,14 +2963,17 @@ Ansible
 		Variables
 			List variables and values
 			YAML
+		Modules - prebuilt python scripts
 Puppet
 	HTTPS 8140
 	Written in Ruby DSL
+	Can check configuration consistency
 	Typically agent based
 		Can be run agentless where proxy agent runs in external host and proxy agent uses SSH to connect to managed devices and communicate
 	Puppet server is called puppet master
 	Pull model
 		Clients pull config from puppet master
+		Checks every 30 min
 		TCP 8140
 	Proprietary Language
 	Requried Text Files
@@ -2947,6 +2985,7 @@ Chef
 	Ruby
 	HTTPS 443 
 	Agent based
+	Written in Ruby
 	Pull mode
 		TCP 10002
 	Files use DSL (Domain Specific Language)
