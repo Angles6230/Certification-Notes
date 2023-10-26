@@ -290,8 +290,10 @@ Configure passive interface
 
 ### OSPF
 `R4(config-if)#router ospf [Process ID]
-Add network to ospf
+Activate OSPF on all interfaces
 `R4(config-router)#network 0.0.0.0 255.255.255.255 area [area number]
+To specify a single interface
+`R4(config-router)#network [IPaddr of int] 0.0.0.0 area [#]
 Set reference bandwidth
 `auto-cost reference-bandwidth [number]`
 View LSB
@@ -302,6 +304,7 @@ view interface
 `show ip ospf interface`
 Configure dead/hello interval
 ``R4(config-router)# ip ospf [hello|dead]-interval [time]`
+
 
 ### HSRP
 Enable HSRPv2
@@ -379,6 +382,8 @@ show etherchannel load balancing
 Show running ip protocols
 `show ip protocols`
 `show ip [eigrp|ospf] neighbors`
+Check OSPF database
+`show ip ospf database`
 `show ip interface brief`
 Displays all EIGRP advertised routes
 `show ip eigrp topology`

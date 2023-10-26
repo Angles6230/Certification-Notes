@@ -901,16 +901,19 @@ Modes
 			VTP info is shared on trunk ports only!!!
 		Also serve as VTP clients
 			Will synchronize to another VTP server with a higher revision number
+		Vlan control, stores, synchronizes, originates, forwards
 	Client
 		Cannot add/modify/delete VLANs
 		Do not store VLAN database in NVRAM until VTP v3
 		Will synchronize their VLAN database ot the server with the highest revision number in their VTP domain
 		Will advertise their VLAN database and forward VTP advertisements to other clients over their trunk ports
+		Synchronizes, originates, forwards
 	Transparent
 		Does not participate in VTP domain
 		Maintains it's own VLAN DB in NVRAM but wont be advertised to other switches
 		Will not sync but will forward VTP advertisements
 		Only forwards VTP advertisements on trunk ports
+		Forwards, stores, vlan control
 Show VTP status
 	VTP version capablities
 	VTP version running
@@ -1284,15 +1287,21 @@ Uses bandwidth and delay to calculate metric
 ECMP by 4 default up to 16
 Can also do unequal cost multipath
 Metric - lowest segment bandwidth + sum of segment delays
+
 Feasible Distance - route's metric value to destination(src to dest) 
 	Best metric along a path
 Advertised/Reported Distance - neighbors metric value to destination(hop 1 to dest)
 	In the routing table it looks like this:
 	``via 10.10.1.1 (Feasible distance/Reported Distance), interface
+	(metric/metric-1)
 Successor - best route/ lowest metric
-Feasible successor - alternate route whose reported distance is lower than successor's feasible distance 
+Feasible successor - alternate route whose reported distance is lower than successor's feasible distance
 	variance value - multiplier for max feasible successor RD loadbalancing
 	Will only perform over feasible successor routes. 
+	Essentially if this route's minus 1 is better than the current route's total route
+	``via 10.10.1.1 (X/X-1), interface
+	``via 10.10.1.1 (Y/Y-1), interface
+	If Y-1 < X 
 Sends multicast using 224.0.0.10
 Can perform unequal-cost load-balancing
 	Can be configured to loadbalance unequally
@@ -1352,6 +1361,7 @@ OSPF Process IDs are only locally significant
 	Only Areas need to be the same
 Autonomous System Boundary Router - ASBR 
 	OSPF router that connects the OSPF network to an external network
+	This is the router that has the default route to external net
 OSPF Metric - Cost
 	Calculated by dividing reference bandwidth value by interface bandwidth
 	Reference band/int band
@@ -1498,7 +1508,7 @@ Types of FHRP
 		You can configure loadbalancing by configuring two different HSRP groups 
 	Virtual Router Redundancy Protocol (VRRP)
 		Open standard
-		Master/Backup
+		Master/ multiple Backup
 		Multicase = 224.0.0.18
 		Mac = 0000.5e00.01XX 
 		VRRP allows for assigning physical int IPs as the virtual IP addr
@@ -1573,6 +1583,7 @@ IPv6 Types
 		USed for routing protocol peerings
 		Next hop addresses for static routes
 		Neighbor Discovery Protocol
+			Basically DHCP
 	Multicast 
 		One to many
 		FFXX - multicast
