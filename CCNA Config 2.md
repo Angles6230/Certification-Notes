@@ -274,8 +274,10 @@ Enable IPv6 on interfaces
 	`R2(config-if)#ipv6 enable`
 Adding IPv6 EUI-64(IPv6 MAC) onto route
 	`R1(config-if)#ipv6 addr 2001:db8::/64 eui-64`
+Create ipv6 without explicitly configuring IPv6 addr
+	`R1(config-if)#ipv6 address autoconfig`
 IPv6 Routing
-	`R2(config)#ipv6 route [destination] [interface] [address] (interface-linklocal) [ad]`
+	`R2(config)#ipv6 route [destination] [exit-interface] [next hop address] (interface-linklocal) [ad]`
 ### EIGRP
 Enable EIGRP
 	`R4(config)#router eigrp [as #]
@@ -307,6 +309,8 @@ Configure dead/hello interval
 
 
 ### HSRP
+Configure HSRP directly on interface
+`R1(config)#int g0/0`
 Enable HSRPv2
 	`R1(config-if)#standby version 2`
 HSRP Configuration
