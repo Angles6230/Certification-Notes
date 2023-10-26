@@ -71,6 +71,8 @@ Specify delay timer for LLDP
 ### NTP
 Configuring the time
 `R1# clock set [time]`
+Set timezone
+`R1#clock timezeon [zone]`
 Configuring NTP
 	`R1(config)#ntp server 1.1.1.1`
 Configuring NTP master
