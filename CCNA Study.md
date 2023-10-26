@@ -2743,8 +2743,11 @@ JSON
 			Series of values separated by commas
 			Values don't need to be same data type
 			Surrounded by bracket  `[ ]
+			Last value doesnt need comma
 			Seperated by comma ,
 				``{ key : [ array, array, array ] }
+		RESTful APIs
+	
 XML
 	Whitespace is insignificant
 	Used by REST APIs
@@ -2789,6 +2792,8 @@ HTTP Response
 	5xx - server error
 		request was valid but server unable to fulfill it
 REST
+	HTTPS transport and JSON or XML data format
+	Architecture - guidelines for structure and organization of an API
 	RESTful architecture states
 		Uniform interface
 		Client-server
@@ -2802,7 +2807,20 @@ REST
 			Caching - storing data for future use
 				Cacheable resources must be declared as such
 		Layered System
+			intermediary devices such as load balancers must be transparent to client and server
 		Code on demand
+			Servers can temp extend or customize the functionality of client by transferring executable code
+	Rest request example
+		`https://demo.flackbox.com|/api/running/aaa/users/neil|?dryrun
+		Target host | Resource | Parameters
+SOAP - Simple Object Access Protocol
+	Transport is HTTP/s
+	Data format is XML
+### Model Driven Programmability
+YANG
+NETCONF
+RESTCONF
+gPRC
 ### Software Defined Networking
 ![[2021-12-30_15-02-09-937ce4d913819135252614e55ffcd74e 1.png]]
 ![[2021-12-30_15-15-54-29aef91d882ac0abca617da3b5993070.png]]
