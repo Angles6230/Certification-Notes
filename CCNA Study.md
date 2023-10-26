@@ -2188,6 +2188,12 @@ Site to Site VPN
 		`[ip packet] GRE header] IP header]`
 		``[Encrypted]IPSec VPN header] IP header]
 		Flexibility of GRE with security of IPSec
+	IPSec
+		Suite of protocols, supports two modes
+			Transport
+				IPSec used to transport - only payload is encrypted, header is intact
+			Tunnel
+				Requires additional headers
 	DMVPN
 		Cisco Developed
 		Dynamic Multipoint VPN
@@ -2355,8 +2361,8 @@ Outdoor Bridge
 	Addresses - Up to 4 addresses can be rpesent
 		Destination Addr - Final recipient of frame
 		Source Address - Original Sender
-		Receiver Address - Immediate recipient
-		Transmitter Address - Immediate Sender
+		Receiver Address or BSSID - Immediate recipient
+		Transmitter Address - Immediate Sender - only available if passing between APs
 	Sequence Control - Used to reassemble fragments and eliminate duplicate frames
 	QoS Control - Used in QoS to prioritize traffic
 	High Throughput control - used to enable high thruput
@@ -2411,7 +2417,7 @@ Wireless AP Deployment methods
 				DHCP option 43 gives ip addr of WLC
 				DNS 'cisco-capwap-controller' resolves the IP address
 				local subnet broadcast
-		Handle realtime operations like transmitting/receiving traffic, encrypt/decrypt traffic
+			Handle realtime operations like transmitting/receiving traffic, encrypt/decrypt traffic
 		Called Split-MAC architecture
 		Functions handled by AP
 			Client handshake
