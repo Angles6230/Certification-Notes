@@ -5,21 +5,35 @@
 `SW2(config)#enable secret [password]
 `SW2(config)#username [username] secret [password]
 `SW2(config)#line console 0
-Require login to access line
+Require login to access line and use local usernames
 `SW2(config-line)#login local
 `SW2(config-line)#exec-timeout 5
 Clear dynamic mac address table
 `SW#clear mac address-table dynamic`
+
+Configure Privileged level
+`R(config)#username [user] privilege [0-15] secret [password]
+
+Tag commands to privilege level
+`R(config)#privilege exec level [#] [command]`
+
+Configure password for privilege level 15
+`enable secret [password]`
+Sets password for privilege level 5
+`enable secret level 5 [secret]`
 #### SSH
-Continued from above
+Generate hostname
+`SW(config)#hostname []
 Create Domain name
 `SW2(config)#ip domain-name cisco.com
 Generate keys for ssh auth
 `SW2(config)#crypto key generate rsa
 `SW2(config)#line vty 0 15
 `SW2(config-line)#login local
-Require SSH connections
+Require SSH connections, default is `transport input all` - allows telnet and ssh
 `SW2(config-line)#transport input ssh
+Limit ssh to ver 2
+`SW2(config)#ip ssh version 2`
 
 ### FTP
 Need to configure user and passwd
@@ -135,8 +149,10 @@ Allow for auto-recovery
 `SW1(config-if)#errdisable recovery cause dhcp-rate-limit`
 
 ### DAI
+Set which vlan to trust
 `SW1(config)#ip arp inspection vlan 1
 `SW1(config)#interface g0/0
+Configure interface as trusted
 `SW1(config-if)#ip arp inspection trust
 Sets the arp rate to 25 packets per 2 seconds, burst interval is optional, default is 1s
 `SW1(config-if)#ip arp inspection limit rate [25] burst interval [2]
@@ -241,6 +257,8 @@ rommon 4 > DEFAULT_GATEWAY=10.10.10.1
 rommon 5 > TFTP_SERVER=10.10.10.10
 rommon 6 > TFTP_FILE=c2900-universalk9-mz.SPA.151-4.M4.bin
 rommon 7 > tftpdnld
+
+### AAA configuration
 ## Routing
 Enable IP routing on layer 3 switch
 	`DSW1(config)# ip routing`

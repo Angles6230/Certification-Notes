@@ -1842,7 +1842,8 @@ By default Syslog msgs will not be displayed with connected via Telnet/SSH
 	• System messages are stored in local buffer memory
 ### Secure Shell
 SSH
-Only a single console line so the nuber is always 0
+Only a single console line so the number is always 0
+SSH requires individual usernames, Telnet can login using line lvl passwords
 iOS images that support SSH will have K9 in their name
 	Can also confirm with show ip ssh
 	version 1.99 = supports v1 and v2
@@ -1869,8 +1870,25 @@ Command Hierarchy
 Minimal passwd security can be configured at 3 diff levels
 	Console - user exec mode
 	Virtual terminal BTY line - Accessing user exec mode
+		Multiple admins can connect at once - usually 16 - 0-15
+		Can also secure by ACLs, permit admin machines/IP
 	Privileged Exec mode - Enable command
-	
+Exec timeout -by default you will be logged out after 10 min
+Privilege levels
+16 privilege levels, 0-15
+Default level is 1
+By default only 3 are used, (zero, user,privileged)
+Each assigned cmd can be assigned a privilege level
+0 level allows only - logout, enable, disable, help ,exit
+User - level 1 - provides limited read only access
+Privileged - level 15 - provides complete control over the router
+
+### AAA Authentication, Authorization and Accounting
+Line level security has scalability issues, use external AAA server for centralization
+Protocols used for AAA services is RADIUS and TACACS+
+	Radius is usually used for end user such as VPN
+	TACACS+ - used for admin access
+	Cisco's AAA is ISE - identity services engine
 ### FTP/TFTP
 Most common use of FTP/TFTP is used to upgrade OS of a device
 TFTP
