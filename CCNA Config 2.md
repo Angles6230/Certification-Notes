@@ -151,7 +151,7 @@ Allow for auto-recovery
 `SW1(config-if)#errdisable recovery cause dhcp-rate-limit`
 
 ### DAI
-Set which vlan to trust
+Set which vlan inspect
 `SW1(config)#ip arp inspection vlan 1
 `SW1(config)#interface g0/0
 Configure interface as trusted

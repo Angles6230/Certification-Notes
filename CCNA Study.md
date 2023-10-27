@@ -1813,16 +1813,16 @@ SNMP Message class
 		Sent by NMS to change information on the managed device
 		Set
 			Change the value of one or more variables
-		Notification
-			Sent by managed devices to alert the NMS of particular event
-				Trap
-					Notif sent from agent to manager
-					UDP, unreliable
-				Inform
-					Notification message that is acknowledged with a resp msg
-		Response
-			Msgs sent in response to a previous msg/req
-				Response
+	Notification
+		Sent by managed devices to alert the NMS of particular event
+			Trap
+				Notif sent from agent to manager
+				UDP, unreliable
+			Inform
+				Notification message that is acknowledged with a resp msg
+	Response
+		Msgs sent in response to a previous msg/req
+			Response
 ### Syslog
 Industry Standard for message logging
 seq : time stamp : %facility-severity-MNEMONIC:description
@@ -2402,7 +2402,7 @@ Outdoor Bridge
 ### Wireless Architecture
 802.11 Frame 
 `[frame control|duration/id|Address1|addr2|addr3|SeqCtrl|addr4|QoS|HT control|Data|FCS]`
-Fanny doesnt add 123 so quakers have donut freebies
+Fanny doesnt add 123 so  all quakers have donut freebies
 	Frame control - Provides information such as msg type and subtype
 	Duration ID - Indicate time in microsec that the channel will be dedicated for transmission of the frame or identifier for the association
 	Addresses - Up to 4 addresses can be rpesent
