@@ -134,7 +134,7 @@ Configure router interface as DHCP client
 	`R1(config)#int g0/0
 	`R1(config-if)#ip address dhcp`
 Configure router as a dhcp relay agent
-	Configure on the interface closest to the DHCP server
+	Configure on the interface closest to the DHCP client
 	``R1(config)# int g0/1
 	`R1(config-if)#ip helper-address [DHCP server address]`
 ### DHCP Snooping
