@@ -308,7 +308,8 @@ view interface
 `show ip ospf interface`
 Configure dead/hello interval
 ``R4(config-router)# ip ospf [hello|dead]-interval [time]`
-
+Add more equal-cost paths for load balancing
+`maximum-paths [#]
 
 ### HSRP
 Configure HSRP directly on interface

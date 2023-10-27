@@ -156,15 +156,15 @@ Class A
 	0 - 127.255.255.255
 		127.X.X.X - reserved for loopback
 		0.X.X.X - reserved for default network
-	Private - 10.x.x.x
+	Private - 10.x.x.x/8
 Class B 
 	129 - 191.x.x.x
 	Second octect
-	172.16.x.x - 172.32.x.x
+	172.16.x.x - 172.32.x.x/16
 Class C 
 	192-223.x.x.x
 	Third octet
-	192.168.x.x
+	192.168.x.x/24
 Class D 
 	Multicast addresses
 	224 - 239.x.x.x
@@ -491,9 +491,12 @@ VLAN Trunking Protocol
 			This is where you make your changes
 		Client
 			Cannot create, modify, delete vlans
-			Sends and forwards advertisments
+			Sends and forwards advertisements
 			Synchronizes database to highest rev num
-
+		Transparent
+			Create, modify, delete vlan
+			Stores own VLAN config
+			Sends and forwards advertisements
 ### DTP
 Dynamic Auto
 	Craves for access but will concede to trunk
@@ -1366,6 +1369,8 @@ OSPF Metric - Cost
 	Calculated by dividing reference bandwidth value by interface bandwidth
 	Reference band/int band
 	Default is 100mbps
+		Ethernet is 10, Fa - 100, Gb - 1000, 10gb - 10000
+		As Fa+ is higher than 100mbps, they all equal 1
 	Does not go lower than 1 cost
 		Treats all costs faster than 1 are the same
 	Total Metric is All costs added together
@@ -1894,6 +1899,7 @@ Each assigned cmd can be assigned a privilege level
 User - level 1 - provides limited read only access
 Privileged - level 15 - provides complete control over the router
 When you create a enable secret password, the enable password is now defunct
+When you type enable secret you can specify option 0, 4, 5 for the value of clear text, SHA256 or MD5 hash
 ### AAA Authentication, Authorization and Accounting
 Line level security has scalability issues, use external AAA server for centralization
 Protocols used for AAA services is RADIUS and TACACS+
@@ -2615,6 +2621,8 @@ Support two auth modes,
 	Enterprise Mode - 802.1X used with authentication server
 ### Wireless Configurations
 WLCs only support Static LAG, no PAgP or LACP
+	By default all ports will be grouped in the LAG
+	LAG only requires one functioning port however
 WLC GUI cannot be connected through SSH or Telnet, Must use HTTP or HTTPS
 SVI for each vlan - default gateway for the subnets
 Option 43 IP XXXX - Used to tell APs the address of their WLC
