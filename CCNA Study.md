@@ -513,7 +513,7 @@ Different types of Spanning Tree
 	CST - common spanning tree - assumes only one spanning tree instance for the entire bridged network
 	PVST - Only supported ISL
 	PVST+ - Supports ISL and 802.1Q
-		Cisco enhancement of spanning tree that provides seperate 802.1 Spanning tree instances
+		Cisco enhancement of spanning tree that provides separate 802.1 Spanning tree instances
 		1 BPDU per VLAN, more VLAN meant more traffic
 	MSTP - Multiple VLANs to same spanning tree
 	802.1S - 2 spanning tree instances
@@ -1115,6 +1115,7 @@ RSTP
 Allows you to group multiple interfaces into a single interface
 When the bandwidth of interfaces on endhost is greater than distribution switches it is called **oversubscription**
 EtherChannel groups multiple interfaces together into a single interface
+	Can have up to  active switchports in a bundle
 Port Channel
 Link Aggregation Group(LAG)
 	Bundles multiple ports into one etherchannel(LAG) interface
@@ -1143,6 +1144,7 @@ Three methods of EtherChannel
 		dynamically negotiates creation/main of etherchannel
 		Auto/Desirable 
 	Link Aggregation control Protocol (LACP)
+		(laCp is not cisco)
 		Industry Standard
 		Can be used to form Etherchannels with other companies
 		Active/Passive
@@ -1438,6 +1440,7 @@ OSPF network types
 		Enabled by default on frame relay and x.25 interfaces
 		Rel(ay)aX(.25)
 		No hello or dead
+		Neighbor command is required to establish adjacencies
 Broadcast Network Type
 	Enabled on Ethernet and FDDI
 	Routers dynamically discover neighbors by sending/listening for OSPF hello using multicast 224.0.0.5
