@@ -76,7 +76,7 @@ Memory sources
 Ethernet frame
 	split into header nd trailer
 	`[preamble | Start-of-frame(SOF) | destination addr | src addr | type | data field | FCS`
-	Please suck dick so tanya doesnt fuck
+	Please suck dick so tanya pays franky
 	header
 		preamble
 			7 bytes long - 8 bits per 1 byte = 56 bits
@@ -1893,7 +1893,7 @@ Each assigned cmd can be assigned a privilege level
 0 level allows only - logout, enable, disable, help ,exit
 User - level 1 - provides limited read only access
 Privileged - level 15 - provides complete control over the router
-
+When you create a enable secret password, the enable password is now defunct
 ### AAA Authentication, Authorization and Accounting
 Line level security has scalability issues, use external AAA server for centralization
 Protocols used for AAA services is RADIUS and TACACS+
@@ -2396,6 +2396,7 @@ Outdoor Bridge
 ### Wireless Architecture
 802.11 Frame 
 `[frame control|duration/id|Address1|addr2|addr3|SeqCtrl|addr4|QoS|HT control|Data|FCS]`
+Fanny doesnt add 123 so quakers have donut freebies
 	Frame control - Provides information such as msg type and subtype
 	Duration ID - Indicate time in microsec that the channel will be dedicated for transmission of the frame or identifier for the association
 	Addresses - Up to 4 addresses can be rpesent
@@ -2514,6 +2515,7 @@ Cloud based AP
 		However Data traffic is not sent to the cloud, only control/management info is sent to cloud 
 		Data traffic is sent directly to wired connection
 WLC Deployment models
+(CUME)
 	Unified - WLC is hardware in the central locaiton of the network
 		Support up to 6000 APs
 		Suitable for large enterprise campus
