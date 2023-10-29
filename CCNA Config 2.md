@@ -109,6 +109,8 @@ Configuring RSTP type
 Configure Etherchannel
 	`ASW1(config-if-range)#channel-group [#] mode 
 		``(active | auto | desirable | on | passive)`
+Adjust Etherchannel protocol
+	`ASW1(config-if-range)#channel-protocol (lacp | pagp)`
 Configure etherchannel loadbalancing
 	`ASW1(config)#port-channel load-balance [options below]
 		`(dst-ip) Dst IP Addr 
