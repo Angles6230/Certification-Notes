@@ -1592,6 +1592,7 @@ IPv6 Types
 		Next hop addresses for static routes
 		Neighbor Discovery Protocol
 			Basically DHCP
+		Not routable over the internet, unicast, one to one 
 	Multicast 
 		One to many
 		FFXX - multicast
@@ -2899,6 +2900,14 @@ APIs that describe the protocols and methods for transport of network management
 	gPRC
 		Google RPC
 		Transport is HTTP/2
+Northbound itnerfaces
+	REST
+	OSGi
+SBI
+	NETCONF
+	OnePK
+	OpenFlow
+	OpFlex
 		
 ### Software Defined Networking
 ![[2021-12-30_15-02-09-937ce4d913819135252614e55ffcd74e 1.png]]
