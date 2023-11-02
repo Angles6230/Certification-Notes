@@ -4,43 +4,15 @@
     "type": "split",
     "children": [
       {
-        "id": "ce8c383a30e92cd3",
+        "id": "7ce5830034ada11f",
         "type": "tabs",
         "children": [
           {
-            "id": "6eff5e1b288b2a55",
+            "id": "10df145cd19a5212",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "CCNA Study.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "36e2ade3c5de44f3",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "CCNA Config 2.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "60e0729e595cde70",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "CCNA tipics.md",
-                "mode": "source",
-                "source": false
-              }
+              "type": "empty",
+              "state": {}
             }
           }
         ]
@@ -94,9 +66,7 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {
-                "file": "CCNA Study.md"
-              }
+              "state": {}
             }
           },
           {
@@ -128,7 +98,6 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "CCNA Study.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -145,7 +114,6 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "CCNA Study.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -180,11 +148,11 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "6eff5e1b288b2a55",
+  "active": "10df145cd19a5212",
   "lastOpenFiles": [
     "CCNA tipics.md",
-    "CCNA Study.md",
     "CCNA Config 2.md",
+    "CCNA Study.md",
     "Pasted image 20231025200700.png",
     "2021-12-30_15-24-10-328a119ac8271f69bf1a8418049dead2 2.png",
     "2021-12-30_15-24-10-328a119ac8271f69bf1a8418049dead2 1.png",
