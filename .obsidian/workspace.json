@@ -11,8 +11,12 @@
             "id": "10df145cd19a5212",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {}
+              "type": "markdown",
+              "state": {
+                "file": "Bash scripting.md",
+                "mode": "source",
+                "source": false
+              }
             }
           }
         ]
@@ -66,7 +70,9 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {}
+              "state": {
+                "file": "Bash scripting.md"
+              }
             }
           },
           {
@@ -77,8 +83,7 @@
               "state": {}
             }
           }
-        ],
-        "currentTab": 3
+        ]
       }
     ],
     "direction": "horizontal",
@@ -98,6 +103,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "Bash scripting.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -114,6 +120,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
+                "file": "Bash scripting.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -150,6 +157,8 @@
   },
   "active": "10df145cd19a5212",
   "lastOpenFiles": [
+    "2021-12-30_15-02-09-937ce4d913819135252614e55ffcd74e 1.png",
+    "2021-12-30_14-37-00-6237f02d1287cc812d1d0a4957ac7410.png",
     "CCNA tipics.md",
     "CCNA Config 2.md",
     "CCNA Study.md",
@@ -158,7 +167,6 @@
     "2021-12-30_15-24-10-328a119ac8271f69bf1a8418049dead2 1.png",
     "2021-12-30_15-22-15-7653a9fa6d976deffa3a0ff8e3649b9e 1.png",
     "2021-12-30_15-15-54-29aef91d882ac0abca617da3b5993070.png",
-    "2021-12-30_14-37-00-6237f02d1287cc812d1d0a4957ac7410.png",
     "Bash scripting.md",
     "CCNA 2.md",
     "Linux cmds to remember.md",
