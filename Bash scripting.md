@@ -1,13 +1,43 @@
-pass command, cmd substitution = `$(cmd)` \
-variable = `${variable}`
+`type -a 'item'` - find out if its a shell builtin or user command
+	if user command use man
+	if shell builtin use help
+Use command to assign to variable = `VARIABLE=$(cmd)`  
+	Can also be `VARIABLE=`\``cmd`\`
+Assign value using variable  
+`WORD='script'`
+variable = `${WORD}` or `$WORD`  
+	When you want to display the variable's value you use `$Variable`  
+	Single quotes prevent expansion of variables 
+	Double quotes provides the interpretation of the variable 
+		`TEST='1'`
+		`echo "$TEST"` provides 1
+		`echo '$TEST'` provides $test
+	If we want to append text to the end of the variable you need to use `{}`
+	`echo "${WORD}ing"` provides Scripting
+	Combining variables also require that you use the `{`
+Changing the value stored in a variable (Reassignment)
+	`ENDING='ed'`
+	`echo "$ENDING"` ed
+	`ENDING='ing'`
+	`echo "$ENDING"` ing
 parameter - variable being used inside the shell script
+`;` is command separator or enter key
 arguement - data passed into the shel lscritp
 	arguement used in command line becoems the value stored in a parameter
-
 `${0}` - first positional parameter - what is typed in the cmd line to execute the script - returns output of the command
 `${1}` - value fo the first arguement passed to the script on the cmd
 expression = `[[ expression ]]
-`${?}` exit status variable
+	Display if user is root or not
+```
+if [[ "${UID}" -eq 0 ]]
+		then
+			echo 'You are root'
+		else 
+			echo 'You are not root'
+		fi 
+```
+
+`${?}` exit status variable of the most recently executed command
 read input `read ` `-p` -passes the input onto value 
 	ex. `read -p 'Entire input: ' variable_name`
 useradd `-c` -comment for user `-m`(make home directory) `"username"`
