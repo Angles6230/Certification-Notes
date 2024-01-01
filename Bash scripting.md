@@ -1,4 +1,4 @@
-pass command, cmd substitution = `$(cmd)`  
+pass command, cmd substitution = `$(cmd)` \
 variable = `${variable}`
 parameter - variable being used inside the shell script
 arguement - data passed into the shel lscritp
