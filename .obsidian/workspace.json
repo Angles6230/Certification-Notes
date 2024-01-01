@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Vagrant Commands.md",
+                "file": "CCNA 2.md",
                 "mode": "source",
                 "source": false
               }
@@ -71,7 +71,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Vagrant Commands.md"
+                "file": "CCNA 2.md"
               }
             }
           },
@@ -103,7 +103,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Vagrant Commands.md",
+                "file": "CCNA 2.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -120,7 +120,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Vagrant Commands.md",
+                "file": "CCNA 2.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -157,19 +157,24 @@
   },
   "active": "10df145cd19a5212",
   "lastOpenFiles": [
+    "CCNA Config 2.md",
+    "CCNA configs.md",
+    "CCNA Study.md",
+    "CCNA tipics.md",
+    "Net + issues.md",
+    "Net+ Notes.md",
+    "Pasted image 20231025200700.png",
+    "Powershell cmds.md",
+    "Linux cmds to remember.md",
+    "Python cmds.md",
+    "Vagrant Commands.md",
     "Bash scripting.md",
     "2021-12-30_15-02-09-937ce4d913819135252614e55ffcd74e 1.png",
     "2021-12-30_14-37-00-6237f02d1287cc812d1d0a4957ac7410.png",
-    "CCNA tipics.md",
-    "CCNA Config 2.md",
-    "CCNA Study.md",
-    "Pasted image 20231025200700.png",
     "2021-12-30_15-24-10-328a119ac8271f69bf1a8418049dead2 2.png",
     "2021-12-30_15-24-10-328a119ac8271f69bf1a8418049dead2 1.png",
     "2021-12-30_15-22-15-7653a9fa6d976deffa3a0ff8e3649b9e 1.png",
     "2021-12-30_15-15-54-29aef91d882ac0abca617da3b5993070.png",
-    "CCNA 2.md",
-    "Linux cmds to remember.md",
-    "CCNA configs.md"
+    "CCNA 2.md"
   ]
 }
