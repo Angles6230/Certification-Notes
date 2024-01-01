@@ -1,8 +1,9 @@
-pass command, cmd substitution = `$(cmd)`
+pass command, cmd substitution = `$(cmd)`  
 variable = `${variable}`
 parameter - variable being used inside the shell script
 arguement - data passed into the shel lscritp
 	arguement used in command line becoems the value stored in a parameter
+
 `${0}` - first positional parameter - what is typed in the cmd line to execute the script - returns output of the command
 `${1}` - value fo the first arguement passed to the script on the cmd
 expression = `[[ expression ]]
