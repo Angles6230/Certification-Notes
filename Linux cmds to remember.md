@@ -77,6 +77,8 @@ Syntax: ` chsh [options] [login] `
   -l = used to specify login shell
   -u = prints list of shell
   -s = used to set the shell as your login shell
+
+# Networking
 Linux nmcli 
   command line tool for controlling network manager
   `nmcli [options] OBJECT {COMMAND | HELP }
@@ -87,6 +89,8 @@ Linux nmcli
   -p , pretty - human readable output
 checking overall status of network manager
   nmcli general
+Show UUID and others
+  nmcli connection show
 Can also be used to start and stop any network interface
   nmcli con up id bond0
   nmcli dev disconnect bond 0
@@ -95,6 +99,8 @@ Can also be used to start and stop any network interface
 Restarting network services
       `sudo nmcli networking off
         `sudo nmcli networking on `
+Text based ui - nmtui
+DHCP - dhclient [-r|release]
 `userdel` - delete users
 `!!` - execute most recent command
 	`!*` - execute most recent command matching `[*]`
