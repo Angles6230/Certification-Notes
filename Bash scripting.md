@@ -36,6 +36,16 @@ if [[ "${UID}" -eq 0 ]]
 			echo 'You are not root'
 		fi 
 ```
+-eq - equal to 
+
+-lt - less than
+
+le - less than or equal to
+
+gt - greater than
+
+ge - greater than or equal to
+
 
 `${?}` exit status variable of the most recently executed command
 read input `read ` `-p` -passes the input onto value 
