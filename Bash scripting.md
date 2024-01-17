@@ -1,12 +1,12 @@
 `type -a 'item'` - find out if its a shell builtin or user command
 
-	if user command use man
+if user command use man
  
-	if shell builtin use help
+if shell builtin use help
  
 Use command to assign to variable = `VARIABLE=$(cmd)`  
 
-	Can also be `VARIABLE=`\``cmd`\`
+Can also be `VARIABLE=`\``cmd`\`
  
 Assign value using variable  
 
@@ -14,11 +14,11 @@ Assign value using variable
 
 variable = `${WORD}` or `$WORD`  
 
-	When you want to display the variable's value you use `$Variable`  
+When you want to display the variable's value you use `$Variable`  
  
-	Single quotes prevent expansion of variables 
+Single quotes prevent expansion of variables 
  
-	Double quotes provides the interpretation of the variable 
+Double quotes provides the interpretation of the variable 
  
 		`TEST='1'`
   
