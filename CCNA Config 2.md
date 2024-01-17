@@ -373,11 +373,16 @@ Creating Vlans and assigning Voice VLAN
 	``% Voice VLAN does not exist. Creating vlan 20
  
 Configure ROAS
+
 	`SW1(config-if)#switchport trunk encapsulation dot1q`
 	`SW1(config-if)#switchport mode trunk`
+ 
 	Allow only data and voice vlan
+ 
 	`SW1(config-if)#switchport trunk allowed vlan 10,20`
+ 
 	Sub interface configuration
+ 
 	`R1(config-if)#int f0/0.10
 	`R1(config-subif)#ip add 192.168.10.1 255.255.255.0`
 	`R1(config-subif)#encapsulation dot1q 10
@@ -416,184 +421,214 @@ Apply to the interface
 	`R1(config-if)#service-policy output [policy name]
 
 ### Port Security
-`SW1(config)#int ra f0/1-3
-Set how long the MAC addresses stay on
-`SW1(config-if-range)#switchport port-security aging time 60
-Portsecurity can only be enabled on access or trunk port
-`SW1(config-if-range)#switchport mode access
-Enable port security
-`SW1(config-if-range)#switchport port-security
-Set the violation mode
-`SW1(config-if-range)#switchport port-security violation [shutdown|restrict|protect]
-Set maximum mac addresses valid for this port
-`SW1(config-if-range)#switchport port-security maximum [#]
-Set so port security dynamically learns mac addr
-`SW1(config-if-range)#switchport port-security mac-address sticky
+
+	`SW1(config)#int ra f0/1-3
+	Set how long the MAC addresses stay on
+	`SW1(config-if-range)#switchport port-security aging time 60 
+	 Portsecurity can only be enabled on access or trunk port
+	`SW1(config-if-range)#switchport mode access 
+	Enable port security
+	`SW1(config-if-range)#switchport port-security
+	Set the violation mode
+	`SW1(config-if-range)#switchport port-security violation [shutdown|restrict|protect]
+	Set maximum mac addresses valid for this port
+	`SW1(config-if-range)#switchport port-security maximum [#]
+	Set so port security dynamically learns mac addr
+	`SW1(config-if-range)#switchport port-security mac-address sticky
 
 ### Recovering system with TFTP image
-rommon 1 > tftpdnld
-rommon 2 > IP_ADDRESS=10.10.10.1
-rommon 3 > IP_SUBNET_MASK=255.255.255.0
-rommon 4 > DEFAULT_GATEWAY=10.10.10.1
-rommon 5 > TFTP_SERVER=10.10.10.10
-rommon 6 > TFTP_FILE=c2900-universalk9-mz.SPA.151-4.M4.bin
-rommon 7 > tftpdnld
+	rommon 1 > tftpdnld
+	rommon 2 > IP_ADDRESS=10.10.10.1
+	rommon 3 > IP_SUBNET_MASK=255.255.255.0
+	rommon 4 > DEFAULT_GATEWAY=10.10.10.1
+	rommon 5 > TFTP_SERVER=10.10.10.10
+	rommon 6 > TFTP_FILE=c2900-universalk9-mz.SPA.151-4.M4.bin
+	rommon 7 > tftpdnld
 
 ### AAA configuration
 ## Routing
-Enable IP routing on layer 3 switch
-	`DSW1(config)# ip routing`
-Create a route
-	`ip route [destination network] [subnet mask] [exit interface | next hop IP addr]`
-Advertise default route
-	`R1(config-router)#default-information originate`
-Create default route
-	`R1(config)#ip route 0.0.0.0 0.0.0.0 [next hop]`
-Enable IPv6 routing
-	`R1(config)#ipv6 unicast-routing`
-Enable IPv6 on interfaces
-	`R2(config-if)#ipv6 enable`
-Adding IPv6 EUI-64(IPv6 MAC) onto route
-	`R1(config-if)#ipv6 addr 2001:db8::/64 eui-64`
-Create ipv6 without explicitly configuring IPv6 addr
-	`R1(config-if)#ipv6 address autoconfig`
-IPv6 Routing
-	`R2(config)#ipv6 route [destination] [exit-interface] [next hop address] (interface-linklocal) [ad]`
+	Enable IP routing on layer 3 switch
+		`DSW1(config)# ip routing`
+	Create a route
+		`ip route [destination network] [subnet mask] [exit interface | next hop IP addr]`
+	Advertise default route
+		`R1(config-router)#default-information originate`
+	Create default route
+		`R1(config)#ip route 0.0.0.0 0.0.0.0 [next hop]`
+	Enable IPv6 routing
+		`R1(config)#ipv6 unicast-routing`
+	Enable IPv6 on interfaces
+		`R2(config-if)#ipv6 enable`
+	Adding IPv6 EUI-64(IPv6 MAC) onto route
+		`R1(config-if)#ipv6 addr 2001:db8::/64 eui-64`
+	Create ipv6 without explicitly configuring IPv6 addr
+		`R1(config-if)#ipv6 address autoconfig`
+	IPv6 Routing
+		`R2(config)#ipv6 route [destination] [exit-interface] [next hop address] (interface-linklocal) [ad]`
 ### EIGRP
-Enable EIGRP
-	`R4(config)#router eigrp [as #]
-Enable eigrp on all interfaces
-	`R4(config-router)# network 0.0.0.0 255.255.255.255`
-Add a network
-	`R4(config-router)# network [ip address] [wildcard mask]
-Disable autosum
-	`R4(config-router)# no auto-summary`
-Configure passive interface
-	`R4(config-router)# passive-interface [interface]`
+	Enable EIGRP
+		`R4(config)#router eigrp [as #]
+	Enable eigrp on all interfaces
+		`R4(config-router)# network 0.0.0.0 255.255.255.255`
+	Add a network
+		`R4(config-router)# network [ip address] [wildcard mask]
+	Disable autosum
+		`R4(config-router)# no auto-summary`
+	Configure passive interface
+		`R4(config-router)# passive-interface [interface]`
 
 ### OSPF
-`R4(config-if)#router ospf [Process ID]
-Activate OSPF on all interfaces
-`R4(config-router)#network 0.0.0.0 255.255.255.255 area [area number]
-To specify a single interface
-`R4(config-router)#network [IPaddr of int] 0.0.0.0 area [#]
-Set reference bandwidth
-`auto-cost reference-bandwidth [number]`
-View LSB
-`show ip ospf database`
-View neighbors
-`show ip ospf neighbors`
-view interface
-`show ip ospf interface`
-Configure dead/hello interval
-``R4(config-router)# ip ospf [hello|dead]-interval [time]`
-Add more equal-cost paths for load balancing
-`maximum-paths [#]
+	`R4(config-if)#router ospf [Process ID]
+	Activate OSPF on all interfaces
+	`R4(config-router)#network 0.0.0.0 255.255.255.255 area [area number]
+	To specify a single interface
+	`R4(config-router)#network [IPaddr of int] 0.0.0.0 area [#]
+	Set reference bandwidth
+	`auto-cost reference-bandwidth [number]`
+	View LSB
+	`show ip ospf database`
+	View neighbors
+	`show ip ospf neighbors`
+	view interface
+	`show ip ospf interface`
+	Configure dead/hello interval
+	``R4(config-router)# ip ospf [hello|dead]-interval [time]`
+	Add more equal-cost paths for load balancing
+	`maximum-paths [#]
 
 ### HSRP
-Configure HSRP directly on interface
-`R1(config)#int g0/0`
-Enable HSRPv2
-	`R1(config-if)#standby version 2`
-HSRP Configuration
-	`R1(config-if)#standby [group number] `
-		`ip` - configures virtual ip addr
-		`ipv6` - ipv6 addr
-		`preempt` - enables preemption - take back over if it goes down
-		`priority` - 
-		`timers` - hello/hold timers
-		`track` - priority tracking
+	Configure HSRP directly on interface
+	`R1(config)#int g0/0`
+	Enable HSRPv2
+		`R1(config-if)#standby version 2`
+	HSRP Configuration
+		`R1(config-if)#standby [group number] `
+			`ip` - configures virtual ip addr
+			`ipv6` - ipv6 addr
+			`preempt` - enables preemption - take back over if it goes down
+			`priority` - 
+			`timers` - hello/hold timers
+			`track` - priority tracking
 ### DNS
-DNS Client
-	Enable DNS
-	`R1(config)#ip domain-lookup`
-	Configure which DNS server to use on router
-		`R1(config)#ip name-server [dnssvr IP]
-	Set primary domain name
-		`R1(config)# ip domain-name [domain name]`
-		Additional DNS
-		`ip domain-list [domain name]`
-DNS Server
-	Configure as DNS server
-	`R1(config)#ip dns server`
-	Create records for resolution
-	`R1(config)#ip host [name] [ipaddr]`
+	DNS Client
+		Enable DNS
+		`R1(config)#ip domain-lookup`
+		Configure which DNS server to use on router
+			`R1(config)#ip name-server [dnssvr IP]
+		Set primary domain name
+			`R1(config)# ip domain-name [domain name]`
+			Additional DNS
+			`ip domain-list [domain name]`
+	DNS Server
+		Configure as DNS server
+		`R1(config)#ip dns server`
+		Create records for resolution
+		`R1(config)#ip host [name] [ipaddr]`
 ### VRF
-Create VRF
-`R1(config)#ip vrf [VRF name]
-Assign interface to VRF
-`R1(config)#int g0/0
-`R1(config-if)#ip vrf forwarding [VRF name]
-Old assigned IP addr is now removed, you need to reapply
-`R1(config-if)#ip addr 192.168.1.1 255.255.255.252
+	Create VRF
+	`R1(config)#ip vrf [VRF name]
+	Assign interface to VRF
+	`R1(config)#int g0/0
+	`R1(config-if)#ip vrf forwarding [VRF name]
+	Old assigned IP addr is now removed, you need to reapply
+	`R1(config-if)#ip addr 192.168.1.1 255.255.255.252
 
 ## Access List
 ### Standard ACLs
 Named ACLs
+
 	`R2(config)#ip access-list standard [name]
 	`R2(config-std-nacl)#permit/deny 172.16.2.1`
 	Apply the ACLs
 	`R2(config)#int g0/0`
 	`R2(config-if)#ip access-group [Name] [in/out]`
+ 
 Numbered ACLs
+
 	`R1(config)#access-list 1 [deny | permit] {Addr|any|host addr} [0.0.0.255]
 	`R1(config)#access-list 1 permit any
 	Apply the ACLs
 	`R1(config)#int g0/1
 	`R1(config-if)#ip access-group 1 out`
+ 
 ### Extended ACLs
-Create
-	`R1(config)#ip access-list extended [100-199 or word]`
-Configure
-	`R1(config-ext-nacl)# [permit|deny] [protocol] [source] [destination] [port]`
-Permit 
-	``R1(config-ext-nacl)# permit ip any any`
-Apply
-	`R1(config-ext-nacl)#int g0/0`
-	`R1(config-if)#ip access-group 100 in`
-Enable logging to syslog server
-	``R1(config)#logging [ip addr]`
-Set severity of syslog msgs sent to server
-	``R1(config)#logging trap [severity]`
+	Create
+		`R1(config)#ip access-list extended [100-199 or word]`
+	Configure
+		`R1(config-ext-nacl)# [permit|deny] [protocol] [source] [destination] [port]`
+	Permit 
+		``R1(config-ext-nacl)# permit ip any any`
+	Apply
+		`R1(config-ext-nacl)#int g0/0`
+		`R1(config-if)#ip access-group 100 in`
+	Enable logging to syslog server
+		``R1(config)#logging [ip addr]`
+	Set severity of syslog msgs sent to server
+		``R1(config)#logging trap [severity]`
 # Show commands
 Show interfaces
-`show ip interfaces brief`
-`show interfaces`
-`show etherchannel summary
+ 
+	`show ip interfaces brief`
+	`show interfaces`
+	`show etherchannel summary
+ 
 show etherchannel load balancing
 	`show etherchannel load-balance
-`show spanning-tree
-`show interfaces trunk
-`show ip route (eigrp|ospf|connected etc)
+ 
+	`show spanning-tree
+	`show interfaces trunk
+	`show ip route (eigrp|ospf|connected etc)
+ 
 Show running ip protocols
-`show ip protocols`
-`show ip [eigrp|ospf] neighbors`
+
+	`show ip protocols`
+	`show ip [eigrp|ospf] neighbors`
+ 
 Check OSPF database
-`show ip ospf database`
-`show ip interface brief`
+
+	`show ip ospf database`
+	`show ip interface brief`
+ 
 Displays all EIGRP advertised routes
-`show ip eigrp topology`
+
+	`show ip eigrp topology`
+ 
 Display HSRP
-`show standby`
+
+	`show standby`
+ 
 See ACLS
-`Show access-lists`
+
+	`Show access-lists`
+ 
 Displays general CDP info - holdtime, packets
-`show cdp`
-`show cdp neighbor`
+
+	`show cdp`
+	`show cdp neighbor`
+ 
 See everything incl IP
-`Show cdp neighbors detail`
-`show cdp interface [int]`
+
+	`Show cdp neighbors detail`
+	`show cdp interface [int]`
+ 
 Show NTP
-`show ntp associations`
+ 
+	`show ntp associations`
+ 
 Show DNS
+
 	`show hosts`
+  
 Show logging
+
 	`show debugging`
-`show flash`
+	`show flash`
+ 
 Shows NAT translations aka src-dest
-`R1#show ip nat translations
-`R1#show ip nat statistics`
-`SW1#show ip arp inspection interfaces`
-``SW1#show ip arp inspection`
-`show ip vrf`
-`show ip route vrf [vrf name]`
+ 
+	`R1#show ip nat translations
+	`R1#show ip nat statistics`
+	`SW1#show ip arp inspection interfaces`
+	``SW1#show ip arp inspection`
+	`show ip vrf`
+	`show ip route vrf [vrf name]`
