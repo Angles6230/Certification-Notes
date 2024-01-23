@@ -122,10 +122,14 @@ dirname - strips last component from file name - aka display only directory  - d
 
 `
 ### Case
-case `[input]` in
-`value`) `command` ;;
+
+```
+case [input] in
+value) command` ;;
+
 ;; - block ender
 esac - case finish
+```
 
 When trying to do math in bash format is `$(( NUM + NUM ))`
 
