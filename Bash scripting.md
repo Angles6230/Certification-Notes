@@ -1,3 +1,4 @@
+
 `type -a 'item'` - find out if its a shell builtin or user command
 
 if user command use man
