@@ -121,7 +121,9 @@ dirname - strips last component from file name - aka display only directory  - d
  
 `bash pgrep -x` - check processes
 
-`
+Redirection
+
+
 ### Case
 
 ```
