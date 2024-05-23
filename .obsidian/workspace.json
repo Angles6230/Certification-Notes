@@ -23,9 +23,23 @@
             "id": "fff12301b9fb55d9",
             "type": "leaf",
             "state": {
-              "type": "release-notes",
+              "type": "markdown",
               "state": {
-                "currentVersion": "1.5.8"
+                "file": "CASP+ Notes.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "05f0afc64b9a0e50",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "CCNA Config 2.md",
+                "mode": "source",
+                "source": false
               }
             }
           }
@@ -82,7 +96,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Bash scripting.md"
+                "file": "CASP+ Notes.md"
               }
             }
           },
@@ -94,8 +108,7 @@
               "state": {}
             }
           }
-        ],
-        "currentTab": 4
+        ]
       }
     ],
     "direction": "horizontal",
@@ -115,7 +128,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Bash scripting.md",
+                "file": "CASP+ Notes.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -132,7 +145,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Bash scripting.md",
+                "file": "CASP+ Notes.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -169,16 +182,17 @@
   },
   "active": "fff12301b9fb55d9",
   "lastOpenFiles": [
+    "Bash scripting.md",
+    "CASP+ Notes.md",
+    "CCNA Config 2.md",
+    "CCNA Study.md",
+    "CCNA configs.md",
+    "Vagrant Commands.md",
     "CASP+ Notes",
     "Linux notes.md",
     "Linux cmds to remember.md",
-    "Bash scripting.md",
-    "Vagrant Commands.md",
     "tags.md",
     "CCNA 2.md",
-    "CCNA Config 2.md",
-    "CCNA configs.md",
-    "CCNA Study.md",
     "CCNA tipics.md",
     "Net + issues.md",
     "Net+ Notes.md",
