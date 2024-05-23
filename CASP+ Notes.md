@@ -13,6 +13,7 @@ Confidentiality
  - Confidentiality failes if someone can obtain and view the data we are attempting to protect
  - If someone gains the file but it is encrypted, it is still confidential
  - Encryption
+ 
 Integrity
 
 - How correct is the info 
