@@ -62,10 +62,9 @@ Policies should be enacted for when data is retained or destroyed
 
 ### Data Types
 Data type is a tag or label to identify data under subcategory under classification
-PII
+	PII
+	SPI
+	PHI
 
-SPI
-
-PHI
 
 
