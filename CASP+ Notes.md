@@ -349,7 +349,6 @@ Likelihood of a threat - measure of the probability that a particular risk will 
 	- Magnitude of impace - Estimation of the amt of dmg that a negative risk cna achieve or the amt of opportunity cost if a risk is realized
 		- Single loss expectancy - Cost with each idividual threat that occurred
 		- Annual loss expectancy - total cost over a year for the threat
-- Trend analysis
 	- Return on investment - how long it will take to make up fopr the expense by preventing risk from occurring
 		- Determines the expected fiscal gains for improvements and balances cost of implementing changes
 	- 6 types of loss
@@ -376,6 +375,23 @@ Likelihood of a threat - measure of the probability that a particular risk will 
 		- Total cost of ownership - TCO
 			- labor costs
 			- Software costs
-			- Can include 
+			- Can include admin costs, insurance premiums
+		1. Industry benchmarks arent always representative for your org
+		2. Minor risk should be covered by org not insurance
+		3. Risk management softrware shjould be utilized due to complexity of risk
+		4. Consider value of risk management - not onyl about the money
+		5. TCO analysis doesnt instantly save you money, it is realized over time
+		6. Org cannot solve all possible problems
+	- MTTR- Mean time to repair/recovery 
+	- Average time a device will take to recover from failure
+	- MTBF - Mean time between failures
+- Trend Analysis
+	- Gap analysis - Performance we're experiencing and expected performance
+		- Find out what caused this decreased performance 
+		- Eliminate risks
+		- Reduce downtime
+	- Trend Analysis
+		- Provide methods and processes to take historical data to provide future projection of risk
+		- Provide good baseline
 
-### When Risk Management Fails
+## Policies and Framework
