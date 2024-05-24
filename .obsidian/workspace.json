@@ -30,18 +30,6 @@
                 "source": false
               }
             }
-          },
-          {
-            "id": "05f0afc64b9a0e50",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "CCNA Config 2.md",
-                "mode": "source",
-                "source": false
-              }
-            }
           }
         ],
         "currentTab": 1
@@ -108,7 +96,8 @@
               "state": {}
             }
           }
-        ]
+        ],
+        "currentTab": 4
       }
     ],
     "direction": "horizontal",
@@ -182,9 +171,9 @@
   },
   "active": "fff12301b9fb55d9",
   "lastOpenFiles": [
-    "Bash scripting.md",
-    "CASP+ Notes.md",
     "CCNA Config 2.md",
+    "CASP+ Notes.md",
+    "Bash scripting.md",
     "CCNA Study.md",
     "CCNA configs.md",
     "Vagrant Commands.md",

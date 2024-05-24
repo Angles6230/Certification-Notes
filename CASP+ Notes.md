@@ -299,4 +299,83 @@ As you add more security, usability decreases
 Systematically trakcing and evaluating the performance of risk mitigation actions against established metrics throughout the lifecycle of an identified risk
 
 Risk Register - tool used to ideitify all potential risks  in a system or org
-	Should incluide
+
+Should include
+- Risk identified
+- Description
+- Level
+- Likelihood
+- Owner
+- Mitigation measures applied
+- Residual level
+
+Scalability
+- Agility of the system to handle the increase in demand
+
+Reliability
+- Measurement of probability that the system will meet certain performance standards
+
+Availability 
+- Percentage of time that the infra will be operational under normal circumstances
+
+KPI - Key performance indicators
+
+KRI - Key risk indicators - used to measure risk instead of performance
+	 KRIs are supported by the underlying KPI
+### Risk Assessment
+
+Tool used to identify vulnerabilities and threats, assess impact and determine what controls to utilize
+
+1. Identify assets and value
+2. Vulnerabilities and threats
+3. Probability and impact
+4. Balance impacts costs with countermeasures
+Assessments should be conducted prior to deploying any new system or technology
+
+Can only be successful if supported by senior management
+
+Likelihood of a threat - measure of the probability that a particular risk will be realized and impact your org
+- Categorized by 
+- Motivation
+	- Acquisition or theft
+	- Business adv
+	- Damage
+	- Embarrassment
+	- Technical adv
+- Source
+	- Intneral
+	- External
+- Annualized rate of occurrence
+	- Magnitude of impace - Estimation of the amt of dmg that a negative risk cna achieve or the amt of opportunity cost if a risk is realized
+		- Single loss expectancy - Cost with each idividual threat that occurred
+		- Annual loss expectancy - total cost over a year for the threat
+- Trend analysis
+	- Return on investment - how long it will take to make up fopr the expense by preventing risk from occurring
+		- Determines the expected fiscal gains for improvements and balances cost of implementing changes
+	- 6 types of loss
+		- Productivity
+			- Down time or repair time
+		- Revenue
+			- Outage and cannot make money
+		- Data loss
+			- Data is loss, takes time to perform recovery
+			- Downtime leads to productivity loss
+			- Data loss can require creation
+		- Data compromise
+			- disclosure or modification of data
+		- Cost of repairs
+			- Actual costs of software, hardware, labor to replace or repair
+		- Loss of repuation
+	- Calculating ROI
+		- Payback - compared ALE against cost of implementation
+		- Net present value - NPV 
+			- Time value of money - money spent today is not the same as money spent tomorrow
+			- Discount rate - makes tmmrw money equal todays money
+			- Account for yearly savings by assumed discount rate 
+			- Due to inflation, opportunity cost and other financial factors
+		- Total cost of ownership - TCO
+			- labor costs
+			- Software costs
+			- Can include 
+
+### When Risk Management Fails
