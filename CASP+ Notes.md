@@ -415,10 +415,149 @@ Likelihood of a threat - measure of the probability that a particular risk will 
 	- Identify job functions and restrict to the identified level of access
 	- Need to know 
 		- Not every user needs access to every single file
+	- Easiest to create groups based off of their role then assign work groups
 - Employment and termination procedures
+	- Admin control that is focused on what to do when hiring and firing an employee
+	- How they will be screened
+	- How are they hired, onboarded, terminated and offboarded
+	- Sign appropriate documents, privacy, use agreement, NDAs, cybersecurity training      
+	- Employees may be cooperative during hiring, may not be cooperative during offboarding
+		- During uncooperative termination, should be revoked immediately
+- User training
+	- Security awareness
+		- Reinforce users with the importance of help 
+		- What to do in an incident
+		- Current threats
+		- Should be developed based on intended audience
+	- Security Training
+		- Teach personnel the skills needed to do their job in a more secure manner.
+	- Security Education
+		- General in nature
+		- Gain more expertise
+- Auditing requirements and frequency
+	- What are we auditing
+	- How is it going to be reported
+	- How often are we doing audits
+	- May be based on contractual requirements
+	- Know what you will audit, what the scope will be and to what level
 ### Frameworks
+- States the role of security in an organization and establishes desired endstate of the security program
+- Broad and provide basic foundation upon the standards baselines and guidelines 
+- Organizational sec pol
+	- Provides general direction
+	- Framework to meet business goals
+	- Define roles, responsibilities and terms
+- System specific pol
+	- Security needs of the specific technology
+	- More technical
+- Issue specific policies
+	- Address specific issue such as email privacy or termination
+- Categories
+	- Regulatory
+		- Mandatory Standards
+		- Laws
+	- Advisory
+		- Acceptable activites such as AUP
+	- Informative
+		- Focus on certain topic, educational in nature
+- Standards - used to implement a policy inside an org
+- Baseline - Reference points that are documented for use as a method of comparison
+- Guideline - Not require actions but recommended
+- Procedures - Step by step instructions based off of the standard, policies and guidelines
+- Enterprise security architecture frameworks
+	- SABSA - Sherwood Applied Business Security Architecture
+		- Who what where when why how of a problem
+		- Six layers of SABSA
+			- Operational
+			- Component
+			- Physical
+			- Logical
+			- Conceptual
+			- Contextual
+	- COBIT - Control Objectives for Information and Related Technology
+		- Security control development framework 
+		- Divides IT into 4 domains
+			- Plan and Organize
+			- Acquire and implement
+			- Deliver and support
+			- Monitor and evaluate
+	- ITIL - IT service management framework
+	- NIST SP 800-53
+		- Security controls framework 
+		- Developed by US DEpt of Commerece
+		- Technical, operational or management control
 ### Regulations
+- HIPAA - Health data
+	- Affects healthcare providers and related facilities
+- Sarbanes-Oxley -SOX
+	- Publicly traded US Corporations
+	- Must follow certain accounting methods and financial reporting
+- Gramm Leach Bliley Act - GLBA
+	- Affects banks, mortgag companies, loan officies, insurance companies, investment and credit card providers
+	- Financial institutions
+	- Security of PII
+	- Prohibits financial informaiton sharing with thrid parties
+- Federal Information Security Management Act - FISMA
+	- Federal agencies
+- Federal Privacy Act of 1974 
+	- Affects any USG computer system that collects, stores, uses or disseminates PII
+	- Only places requirements upon Federal agencies 
+- Family Education Rights and Privacy Act - FERPA
+	- Protects privacy of student education records
+	- Applies to all schools 
+- Computer Fraud and Abuse act - 1986
+	- Defines hacking of protected computers
+	- Computers that include financial records or govt info
+- Economic espionage act of 1996
+	- Affects orgs with trade secrets and for anyone who tries to use encryption for criminal activities
+- Childresn Online Privacy Protection Act - COPPA
+	- Imposes requirements on websites and online services that are directed to children under 13 yo
+- Personal Information Protection and Electronic Documents Act - PIPEDA
+	- Canadian
+	- Requires orgs to obtain consent when they collect, use or disclose PII 
+	- Have clear and readily available policies for their customers
+- General Data Protection Regulation - GDPR
+	- EU
+	- Personal data cannot be collected, processed or retained without the individuals' informed consent
+	- Can only be used for stated purpose
+	- Purpose must be clearly described to the user in plain language, not in legalese
+	- User has right to withdraw their consent at any time
+	- Ability to inspect, ament or erase any data that is held about them
+		- Right to be forgotten
 ### Standards
+Created for specific industries to be followed as best practice
+- PCI DSS - Payment Card Industry Data Security Standard.
+	- Agreement that any org that collects, stores or processes CC info has to abide by
+	- Contractual agreement and standard
+	- Org must recieve external audit once a year
+- ISO
+	- Group of standards created as a series of best practices
+	- ISO 27000 - Information System Security Measurement
+	- ISO 27001 - How to manage Info sec
+	- ISO 27002 - different info sec controls you can use
+- CMMI - Capability Maturity Model Integration
+	- PRocessed and behaviors that are used during development of software, products and services
+	- Categoriezes orgs from 1-5 
+	- 1 = Least mature
+	- 5 = Most mature
+- NIST - National Institute of Standards and Technology
+	- NIST 800 series
+	- NIST SP 800-53 - Security and privacy controls
+	- NIST CSF - Cybersecurity framework
+- Common Criteria - CC
+	- Set of standards in which comp sys users can specify their security, function, and assurance requirements in a given system
+	- Like the PG or R rating for movie
+	- Evaluation Assurance Levels - EAL
+		- Go from EAL1 to ELA7
+		- Higher ELA means more cost
+- Cloud Security Alliance's Security Trust Assurance and Risk or CSA STAR.
+	- Publicly accessible registry that documents security and privacy controls
+	- Standard that cloud providers are going to be compared against
+	- Allows orgs to better understand their security and compliance postures
+	- Two levels
+		- 1 - Self assessment, Orgs submit to a security and privacy self-assessment against the Cloud Controls MAtrix and GDPR Code of conduct
+		- 2 - Same as 1 but third party does the audit
 ### Contracts and Agreements
+
 ### Legal Considerations
 ### Integrating Industries
