@@ -395,3 +395,30 @@ Likelihood of a threat - measure of the probability that a particular risk will 
 		- Provide good baseline
 
 ## Policies and Framework
+
+### Policies
+- Sep of duties
+	- Preventative administrative control
+	- Distribute approval and auditing across multiple duties
+	- High risk functions should use proper seperation of duties
+	- Dual control - two keys
+	- Split knowledge - Two diff ppl have half of the required knowledge
+- Job rotation
+	- Different users are perform tasks of same position
+	- Helps prevent and identify fraud
+	- Also helps to crosstrain and backup primary
+- Mando vacay
+	- Require employees take vaca at one point 
+	- Forces someone else to come in and do their job functions for them
+- Least privilege
+	- Providing users or services with the lowest level of access required to do their job functions
+	- Identify job functions and restrict to the identified level of access
+	- Need to know 
+		- Not every user needs access to every single file
+- Employment and termination procedures
+### Frameworks
+### Regulations
+### Standards
+### Contracts and Agreements
+### Legal Considerations
+### Integrating Industries
