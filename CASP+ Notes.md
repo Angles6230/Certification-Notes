@@ -196,3 +196,96 @@ GDPR - EU
 If you have a website in US and use USD, an EU citizen buys from you, there is no GDPR protections for privacy as EU citizen left the EU to come to the store, You didnt target the EU citizen directly
 
 ## Risk Management
+### Risk Strategies
+Risk management is your primary job 
+
+Finding ways to minimize the likelihood of certain outcome from occurring and achieving the outcomes we want
+
+Faucets of Risk Management
+- Risk Assessment
+- Risk Measurement
+- Handling
+- Tracking
+- Lifecycle
+- Consideration
+
+What and where is risk
+
+Risk - Probability that a threat will be realized and a cotninual balancing act of a vulnerability against a threat 
+
+Vulnerability - weakness in system configuration
+
+Cannot fully control threats - can only minimize
+
+Threat - anything that could cause harm loss dmg or compromise to IS
+
+What can we do to minimize risk
+
+### Risk Management Lifecycle
+
+Identify
+- Brainstorming the threats
+- Considers all types of risks or uncertainties that may impact us to achieving a set of objectives
+- Managing Information Security Risk - guide for risk management - NIST SP 800-39
+- Frame - True goal in risk management - Establish a strategic risk management framework supported by key stakeholders at the top tier of organization
+
+Assess
+- Identify and prioritize diff business processes and workflows in the org
+- Which assets are there and which assets support the workflows
+
+Respond/Control
+ - Mitigations in place to lower the risk we assessed
+ - Categories of control
+ - People
+	 - Controls and mitigations 
+	 - Reducing risk, increasing security through culture
+ - Process
+	 - Rules, regulations and oversight
+ - Technology
+	 - Right systems in place and automate them to make it smarter and effective
+ - Protect
+	 - Providing appropriate safeguard
+ - Detect
+	 - Defining appropriate activities to identify occurrence of an event
+ - Respond
+	 - Activities to take action against incident
+ - Restore/Recover
+	 - plans for resilience or restore capabilities
+
+Review/Monitor
+
+Evaluate the effectiveness of the risk response measures and identifies changes that could affect how risk can be managed
+
+Risk Determination - conducted through performance of a formal risk analysis
+ - Quantitative
+	 - hard numbers
+	 - Assign values to the asset, threat frequency, impact of threat realization
+ - Qualitative
+	 - Non numerical values, feeling or opinion
+	 - Propoised impact severity
+	 - Loss potential
+	 - Likelihood of occurrence
+	 - Con: Dollar values are not provided, hinders Cost benefit analysis
+
+### Risk Types
+
+Inherent - Risk is identifies but no mitigation is applied 
+- Level of risk in place prior to taking any mitigating actions
+- Always some inherent risk
+
+Residual risk - Calculate the risk after mitigation and controls are applied
+
+Risk Exception - risk created due to exemption being granted or failure to comply with corporate policy
+- Should not be a way of life in your org, should be issued for a short period of time or while waiting for overall policy change
+
+### Risk Handling
+Only 4 things you can do with risk
+
+Mitigate
+
+Transfer
+
+Avoid
+
+Accept
+
