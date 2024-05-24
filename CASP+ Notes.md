@@ -281,11 +281,22 @@ Risk Exception - risk created due to exemption being granted or failure to compl
 ### Risk Handling
 Only 4 things you can do with risk
 
-Mitigate
+Avoid - Strategy that involves stopping the risky activity or choosing an alternative\
+ - eliminating hazards that could negatively affect us
 
-Transfer
+Mitigate - Strategy that seeks to minimize the risk to an acceptable level an organization is willing to accept
 
-Avoid
+Transfer - Transfer risk to third party, i.e. insurance company
 
-Accept
+Accept - simply accept the pain
 
+Risk appetite - How much risk you're willing to accept before action is deemed necessary to reduce that risk
+- Risk attitude or risk tolerance
+As you add more security, usability decreases
+
+### Risk Tracking
+
+Systematically trakcing and evaluating the performance of risk mitigation actions against established metrics throughout the lifecycle of an identified risk
+
+Risk Register - tool used to ideitify all potential risks  in a system or org
+	Should incluide
