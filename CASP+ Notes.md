@@ -637,9 +637,126 @@ Created for specific industries to be followed as best practice
 	- No downtime
 	- Expensive
 	- What about physical things, not only data
-		- Chairs, desk
+		- Chairs, desks, chairs, network things, phones etc
+		- Employees can walk in and start
 	- Not used by most companies, only for mission critical items
 - Warm Site
-	- 
+	- Get up and ready in a few days
+	- Ex. has phones, power but not installed yet but can be ready in a couple days
+	- Bit cheaper but reduce response time
 - Cold Site
+	- Even fewer facilities than a warm site 
+	- Longer lead time
 - Mobile Site
+	- Uses independent and portable units to provide the recovery
+	- DJC2
+### Business Impact Analysis
+- Functional analysis that is conducted as part of the development of the business continuity and disaster recovery plans
+- Management level analysis that identifies the impact of losing organizational resources
+- Mission essential functions - MES
+	- Limited set of functions that must be continued throughout or resumed rapidly after a disruption of normal operations
+- Four steps
+	- Identify the crucial processes and resources in an org
+		- Responsible parties will be assigned to gather info concerning them
+	- Identify the impacts of an outage and estimate the downtime for crucial processes
+		- each process will be assigned a criticality level
+			- Critical - Should be back up within minutes or most 1hr
+			- Urgent - stay down up to 24 hours
+			- Important - 3 days
+			- Normal - 7 days
+			- Nonessential - up to 30 days
+			- - Maximum Tolerable Downtime - MTD
+		- Most amt of time a business can tolerate that asset or component being down
+		- Maximum period of time disruption or MPTD
+		- Maximum tolerable outage - MTO
+		- Add RTO and WRT together
+		- RTO - acceptable downtime
+		- Work Recovery Time - Difference between MTD and RTO
+			- Amt of time it takes to get the critical business functions back up and running once your hardware, software and config has been restored
+		- Why MTD =/= RTO? 
+			- Systems need to be sync'd, tested, data put back into system
+			- This additional time is called WRT
+		- Mean Time to Repair - MTTR 
+			- Average amt of time it takes to repair an asset or component when a disaster or disruption occurs
+		- Recovery Service Level - RSL
+			- Percentage of how much computing power you need during a disaster
+			- IF half the facility is destroyed by fire, you only need 60% of your computing resources up before you can say you are up
+	- Identify your resource requirements
+	- Identify the recovery priorities
+		- Generally classified as high, medium, low
+### Privacy Impact Assessment
+ - Process of identifying and managing the privacy risks arising from new projects, intiatives, systems and other events 
+ - Org will analyze its processes how they might affect or compromise the privacy of people whose data is collected, held or processed by the org
+ - Conformance with legal, regulatory and policy requirements for privacy
+ - Idetnify and evaluate the risks of privacy breaches
+ - Identify appropirate privacy controls to mitigate unacceptable risks
+ - Should be conducted whenever the orgn posssess sensitive information
+ - Benefits
+	 - Provides a warning system to detect problems and build safeguards
+	 - Provides evidence of privacy risk prevention  attempts
+	 - Helps imporve informed decision making by senior leaders
+	 - Helps the org gain public trust and confidence
+	 - Demonstrates that the org takes privacy seriously
+ - Steps
+	 - Intiate the project
+	 - Conduct data flow analysis
+	 - Conduct privacy analysis
+	 - Publish the Privacy impact assessment report
+ - Six steps to every good incipent respponse
+	 - Detection 
+		 - Need to detect the incident
+		 - Logging, auditing
+	 - Response
+		 - Appropriate response to the incident
+		 - How long each response should take
+	 - Report
+		 - How quickly should be reported and to what level
+		 - Provide an acceptable baseline for employees to recover
+	 - Recovery
+		 - How do we recover
+		 - Getting services back up
+	 - Remediate
+		 - Eliminiate any traces of the incident
+		 - Getting services back to known good configuration
+	- Review 
+		- What caused it
+		- How can we prevent in future
+		- After Action Report - AAR
+		- Lessons Learned Report - LLR
+			- What worked what didnt how can we prevent etc
+- Event - Change in state of security or operation, negative or positive
+- Incident - negative event that impacts an org's security or operations
+- CSIRT - Cybersecurity Incident Response Team
+	- Incident Response Manager-  team lead
+		- Oversees and prioritizes actions during detection, analysis and containment of an incident
+		- Requires lots of soft skills
+	- Security Analyst
+		- Plays detective on the affected network to determine what happened
+		- Triage Analyst
+			- Assigned to work on the network and filter out false positives
+		- Forensic analyst
+			- More focused on detective work
+			- Piece together what happened
+			- Recover key artifacts and evidence
+	- Threat researched
+		- Provide threat intelligence and overall context during incident response
+		- Keep up to date on previous incidents
+### Testing Plans
+- Checklists
+	- List of items that are qreuied or things taht need to get done
+- Walkthroughs
+	- Basic training event
+	- Having everyone gather around and describe the steps of the plan
+	- At least quarterly
+- Tabletop exercises
+	- Discussion based session where team members discuss their roles and what they would do in response to a given scenario
+	- Twice a year
+- Full interruption test
+	- Shut down in primary and shift to secondary
+	- Actually test to see if our plans work
+	- Annually or rotate with parallel or sim test one year, full interr another year
+- Parallel test
+	- Uses recovery systems that are built and tested to see if tehy can perform actual business to support
+- Simulation test
+	- Simulated disaster or incident response to discover if the response plans are good enough to work through those issues
+- 
