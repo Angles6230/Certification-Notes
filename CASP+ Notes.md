@@ -759,4 +759,56 @@ Created for specific industries to be followed as best practice
 	- Uses recovery systems that are built and tested to see if tehy can perform actual business to support
 - Simulation test
 	- Simulated disaster or incident response to discover if the response plans are good enough to work through those issues
+## Risk Strategies
+### Asset Value
+- Assets can be tangible and intangible
+- How to determine value of asset?
+	- Value the asset has to the owner
+	- Work required to develop or obtain the asset
+	- Cost to maintain
+	- Damage that  would result if lost
+	- Cost competitor would pay for asset
+	- Penalties that may arise if asset were lost
+- Identify threats and vulnerabilities to that asset
+	- Human
+		- Insiders, outsiders, terrorists etc
+	- Natural
+		- Hurricanes, floods etc
+	- Technical
+		- failure of hardware or software, viruses etc
+	- Physical
+		- Failure of physical security measures
+			- CCTV, Gate etc
+	- Environmental
+		- power, cooling, heating 
+	- Operational
+		- Process or procedure taht may affect one of our three tenets of IS - CIA
+- Determine likelihood of threat or vulnerability being realized
+### Control Categories
+- Compensative
+	- Used in place of a primary control to mitigate a risk
+- Corrective
+	- Reduce the effect of an undesirable effect
+- Detective
+	- detect and attack while its occurring 
+	- notify proper personnel
+- Deterrent
+	- Discourage attackers
+	- Signs
+- Directive
+	- Force compliance with security policy and practices within the organization
+- Preventive
+	- Prevent or stop attack from occurring in the first place
+- Recovery
+	- Recovery after an attack has happened
+- Three types of controls
+	- Administrative/Management 
+		- Manage operational personnel through policies, standards, guidelines
+	- Logical/Technical
+		- Access lists, firewalls,
+		- Auditing - one time evaluation
+		- Monitoring - Ongoing process
+	- Physical
+		- Security badges, fences, locks
+### Aggregate Risk
 - 
