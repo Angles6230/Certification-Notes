@@ -558,6 +558,88 @@ Created for specific industries to be followed as best practice
 		- 1 - Self assessment, Orgs submit to a security and privacy self-assessment against the Cloud Controls MAtrix and GDPR Code of conduct
 		- 2 - Same as 1 but third party does the audit
 ### Contracts and Agreements
-
+- SLA - Service Level Agreement
+	- ability to support and respond to problems within a given timeframe providing the agreed upon level of service
+- OLA - Operational level agreement
+	- Internal agreement between different departments
+- MSA - Master Service Agreement
+	- Agreement for future agreements
+- NDA - Defines what data is considered confidential and cannot be shared outside of the relationship
+	- Administrative control not technical
+- MOU - Memorandoum of understanding
+	- Non binding
+	- Letter of intent
+	- Gentlemens agreement
+- Interoperability agreements 
+	- Binding agreements used during normal operations
+- Interconnection security agreement - ISA
+	- Agreement for the owners and operators of an IT system to document what technical controls each org has to meet for interconnection to happen
+- BPA - Business Partnership Agreement
+	- Between 2 business partners and establishes the conditions of that relationship
+	- Outlines responsibilities
+- Privacy Level Agreement 
+	- Addresses which PII can be shared, with whom and how it is transmitted and exchanged securely and confidentially
+	- If a piece of data can be used by itself or in combination with other pieces of dat to uniquely identify a person it is considered PII
+	- Outlines in contractual terms how any third parties you deal with are going to ensure the information it hosts for you is not seen by the wrong set of eyes
 ### Legal Considerations
+- Due diligence
+	- Investigated all reasonable measures to address a given risk
+	- Research aspect
+- Due care
+	- Having taken all reasonable actions to prevent security issues
+	- Action aspect
+- Export controls
+	- Federal laws that prohibit the unlicensed export of certain commodities or information for reasons of national security or protections of trade
+	- Military applications or economic protection issues
+	- Concerns over destination country, organization or individual
+	- Concerns about suspected or declared end use or end user
+- Legal hold
+	- Process that an org uses to preserve all forms of potentially relevant info when litigation or lawsuits are pending or reasonably anticipated
+	- Org will suspend normal disposition or processing of records i.e. tape recycling, media archiving etc
+	- E-Discovery
+		- Discovery in legal proceedings such as lawsuits, investigations or FOIA requests
+		- Electronic information has an intangible form, volume transience, persistence
+		- Elec info is usually accompanied by metadata
+- Third party attestation of compliance
+	- Third-party came, audited and Stating that you met the requirements and you're compliant
 ### Integrating Industries
+ - Rules are directive and specific in nature
+ - Policies are easier to standardize because they are more generic in nature and don't usually provide specific solutions or methods
+ - Confidentiality and encryption
+	 - Some technologies are not allowed to be exported to certain areas of the world due to encryption strength due to export control
+	 - May standardize to meet highest level requirements or segregate organization
+
+## Business Continuity
+### Business Continuity Plan
+- Ensures an org is able to recovery from disruptive event or disaster
+- Refers to the plans and processes used as a response during a disruptive event
+- Disaster Recovery Plan - DRP
+	- Specifically refers to plans and processes that are used during a disaster
+- BCP is a plan for any disruptive event or in response to any type of threat
+- BCP you plan for your primary, secondary and tertiary fallbacks
+- BCP may include a DRP
+- Resposibility of sernior managers for development of BCP
+- Business Recovery Comittee 
+	- Should include everyone from every dept
+	- Identify and priority all systems that we need to support for the continuity of the business
+- Define the scope of the plan otherwise subject to scope creep
+	- Sr management must determine the level of risk they are willing to accept
+- NIST SP 800-34 - 7 steps to perform in BCP
+	- Develop a policy for contingency planning
+	- Conduct business impact analysis
+	- Identify preventative controls
+	- Create recovery strategies
+	- Develop the business continuity plan
+	- Train, test, exercise the BCP
+	- Maintain the BCP
+- Hot sites
+	- Up and running continously
+	- No downtime
+	- Expensive
+	- What about physical things, not only data
+		- Chairs, desk
+	- Not used by most companies, only for mission critical items
+- Warm Site
+	- 
+- Cold Site
+- Mobile Site
