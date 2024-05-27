@@ -810,5 +810,5 @@ Created for specific industries to be followed as best practice
 		- Monitoring - Ongoing process
 	- Physical
 		- Security badges, fences, locks
-### Aggregate Risk
+### Scenario Planning
 - 
