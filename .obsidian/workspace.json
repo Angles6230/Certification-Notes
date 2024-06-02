@@ -11,8 +11,12 @@
             "id": "10df145cd19a5212",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {}
+              "type": "markdown",
+              "state": {
+                "file": "CASP+ Notes.md",
+                "mode": "source",
+                "source": false
+              }
             }
           }
         ]
@@ -66,7 +70,9 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {}
+              "state": {
+                "file": "CASP+ Notes.md"
+              }
             }
           },
           {
@@ -77,8 +83,7 @@
               "state": {}
             }
           }
-        ],
-        "currentTab": 4
+        ]
       }
     ],
     "direction": "horizontal",
@@ -98,6 +103,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "CASP+ Notes.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -114,6 +120,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
+                "file": "CASP+ Notes.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -148,7 +155,7 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "3ded059871a57865",
+  "active": "10df145cd19a5212",
   "lastOpenFiles": [
     "tags.md",
     "Linux notes.md",
