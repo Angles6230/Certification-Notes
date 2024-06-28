@@ -811,4 +811,140 @@ Created for specific industries to be followed as best practice
 	- Physical
 		- Security badges, fences, locks
 ### Scenario Planning
-- 
+- Analyze threats organization faces
+	- Internal Threats
+ 		- Employees, untrained, disgruntled, uncaring
+ 		- Governmental or corporate spys
+ 		- Partners and vendors could also be a threat
+ 	- External threats
+		- Competitors
+		- Hackers
+		- Activists
+		- Nation state cyber threats
+	- Hostile or non hostile
+	- Ranking based on criteria
+	 	- Skill level
+	    	- Resources
+		- Limits - Code of conduct or anarchist?
+		- Visibility - whether the actor cares if they get caught
+		- Objective 
+		- Outcome
+- Determine what the org wants to protect from threats(assets)
+- Decide exactly what we want to protect
+- Develop a scenario incorporating those threats and assets
+- Develop attack tree for each scenario
+- Determine security controls that are used to protect assets
+### Security controls
+- Should be reviewed annually
+- What are used
+- How can we approve
+- Are these needed
+- Has new problems been identified
+- What can be added
+- Gap analysis - compared current perforance to desired performance
+- Need to know where you're currently sitting
+- Need to continuously monitor to know when the baseline is different
+- Baselne - longer duration
+- Benchmark - Single point in time
+- Set up alarm points based on your thresholds
+### Security Solutions
+- Create prototype
+- Test solution before rollout
+- Roll out in stages
+- Consider performance requirements
+- Scalability
+- Maintainability - how often the soluton has to be updated, upgraded or fixed
+- Availability - amt of time a system is avalable for use
+- Recoverability - probability failed solution can be restored to normal
+## Vendor Risk
+### Business Model
+- Risk profile - orgs willingness to take on and accept various levels of risk
+- 4 major types of business model and strategies that affect orgs risk profile
+	- Partnerships
+ 		- Formal or informal
+   - Establish reuirement for info and data exchange for orgs
+   - TCA - Third party connection agreement
+   	- dictate security controls that need to be put in place to protect the data thats being exchanged between 2 partners
+ - Outsourcing
+ 	- Org believes that they transferred risk to third party - not always the case
+  - Check outsourcing agreement
+  - Does outsourcing company meet regulatory requirements?
+  - Different providers may not have same processes and procedures
+  - Architectures may not be compatible with one another
+  - Legal issues due to geography
+  - Outsourcing company may outsource as well
+  - Host company may face downstream liability
+ - Cloud
+        - Limitations due to contracts
+   - Issues with data remnants
+ - Divestiture/DeMerger
+ 	- Mergers and demergers introduce a lot of risk
+  - Did you divest properly/merge properly etc
+- Due diligence steps
+- Define plan to set and measure sec controls
+- Identify gaps or overlaps
+- Create risk profile for risks
+- Proiritize process refinement
+- Ensure auditing and compliance personnel are using same framework
+### Influences
+- Competitiors
+        - Consider competitive landscape, what do competitors do  in terms of security 
+- Auditors
+        - Can also provide accountability
+- Regulators
+        -  Provide more stringent requirements
+- Client requirements
+        - Internal clients - Employees who use IS
+        - External clients 
+- Top level management
+        - C-Suite
+        - Business minded rather than infosec
+- De-perimiterization
+        - Constant change in boundary of the network
+        - VPN, remote work etc
+- BYOD
+- How will it eb supported and protected, managed
+### Org changes
+- Internal environment
+        - Bottom up influnces
+        - Top down influences
+- External environment
+        - Competitors or peers
+- Conduct risk analysis
+- Need top management support
+- Statement of applicability - SOA
+- Identifies controls pciked by the rog and explains why those controls are considered appropriate
+- Processes - collection of activities that work together for a specific outcome or goal
+- Procedures - step by step lists of policy, std and guidelines
+- Morphs according to
+- Business
+- Technology
+- environment
+- Regulations
+- Emereging risks
+### Shared responsibility model
+- Security framework that dictates the security obligations of a cloud computing provider and its clients to ensure accountability
+- Roles and responsibilities of CSP
+        - Hardware
+        - Software
+        - Networking
+        - Facilities
+- Client responsibilities
+        - Configuration
+        - Data mangement
+        - Access management
+- Inheritied controls - fully controled and managed by CSP
+- Shared controls - applies to CSP and client
+- Customer/Client specific controls - sole responsibility of the client
+### Vability and support
+- Vendor viability
+        - long term capacity to support your needs
+        - Issues surrounding vendor lock in/lock out
+        - Source code escrow
+        - Deposite source code of software with a 3rd party escro agent
+        - src code is not available until developer goes bankrupt or otherwise fails to maintain/update software
+        - Financial risk
+  		- financial statements 
+  	- Strategic risk
+  		-  is the company likely to be a part of merger acquisition
+		- 
