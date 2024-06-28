@@ -947,4 +947,5 @@ Created for specific industries to be followed as best practice
   		- financial statements 
   	- Strategic risk
   		-  is the company likely to be a part of merger acquisition
-		- 
+	- Vendor Lock in
+ 		- Vendor creates barrier to entry for smaller companies to prevent customers from switching over
