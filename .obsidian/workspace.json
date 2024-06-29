@@ -30,19 +30,9 @@
                 "source": false
               }
             }
-          },
-          {
-            "id": "2b4271a50972d877",
-            "type": "leaf",
-            "state": {
-              "type": "release-notes",
-              "state": {
-                "currentVersion": "1.5.12"
-              }
-            }
           }
         ],
-        "currentTab": 2
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -107,7 +97,7 @@
             }
           }
         ],
-        "currentTab": 4
+        "currentTab": 3
       }
     ],
     "direction": "horizontal",
@@ -179,7 +169,7 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "2b4271a50972d877",
+  "active": "fff12301b9fb55d9",
   "lastOpenFiles": [
     "CCNA Config 2.md",
     "CASP+ Notes.md",
