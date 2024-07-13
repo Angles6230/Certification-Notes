@@ -949,3 +949,12 @@ Created for specific industries to be followed as best practice
   		-  is the company likely to be a part of merger acquisition
 	- Vendor Lock in
  		- Vendor creates barrier to entry for smaller companies to prevent customers from switching over
+
+
+
+
+- Class 1 certificate: For individuals and intended for email. These certificates get saved by web browsers. No real proof of identity is required.
+- Class 2 certificate: For organizations that must provide proof of identity.
+- Class 3 certificate: For servers and software signing in which independent verification and identity and authority checking are done by the issuing CA.
+- Class 4 certificate: For online business transactions between companies.
+- Class 5 certificate: For private organizations or government security.
