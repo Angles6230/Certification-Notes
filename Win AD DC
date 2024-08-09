@@ -1,0 +1,14 @@
+AD Forest
+Single isntance of AD
+Every org has at least one forest
+Highest level of org
+ - includes domains
+- configs 
+- one AD Schema
+  - Schema - Defines what is allowed to be stored within AD and how
+domains within a forest share implicit trust with other domains
+- Two way transitive trusts
+-Also share common AD Schema
+- Share Global catalog
+   - Little data base that contains a refrence for all domains in forest but only with partial attributes
+-Non contiguous namespace
