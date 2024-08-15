@@ -71,7 +71,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "conflict-files-obsidian-git.md"
+                "file": "CASP+ Notes.md"
               }
             }
           },
@@ -84,7 +84,7 @@
             }
           }
         ],
-        "currentTab": 4
+        "currentTab": 3
       }
     ],
     "direction": "horizontal",
@@ -104,6 +104,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "CASP+ Notes.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -120,6 +121,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
+                "file": "CASP+ Notes.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -154,7 +156,7 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "3ded059871a57865",
+  "active": "a0ea5842b361df55",
   "lastOpenFiles": [
     "conflict-files-obsidian-git.md",
     "CASP+ Notes.md",
