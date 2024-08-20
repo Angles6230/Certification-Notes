@@ -18,8 +18,19 @@
                 "source": false
               }
             }
+          },
+          {
+            "id": "093c5a5dc68e5879",
+            "type": "leaf",
+            "state": {
+              "type": "release-notes",
+              "state": {
+                "currentVersion": "1.6.7"
+              }
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -156,7 +167,7 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "a0ea5842b361df55",
+  "active": "093c5a5dc68e5879",
   "lastOpenFiles": [
     "conflict-files-obsidian-git.md",
     "CASP+ Notes.md",
