@@ -25,7 +25,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "conflict-files-obsidian-git.md",
+                "file": "Win AD DC.md",
                 "mode": "source",
                 "source": false
               }
@@ -106,7 +106,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "conflict-files-obsidian-git.md"
+                "file": "Win AD DC.md"
               }
             }
           },
@@ -138,7 +138,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "conflict-files-obsidian-git.md",
+                "file": "Win AD DC.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -155,7 +155,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "conflict-files-obsidian-git.md",
+                "file": "Win AD DC.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -192,8 +192,11 @@
   },
   "active": "2db2b49faabb5fb1",
   "lastOpenFiles": [
-    "Bash scripting.md",
+    "RCHSA notes.md",
+    "Sec+ Notes.md",
+    "Net+ Notes.md",
     "conflict-files-obsidian-git.md",
+    "Bash scripting.md",
     "Win AD DC.md",
     "CCNA Config 2.md",
     "CASP+ Notes.md",
@@ -207,12 +210,10 @@
     "CCNA 2.md",
     "CCNA tipics.md",
     "Net + issues.md",
-    "Net+ Notes.md",
     "Pasted image 20231025200700.png",
     "Powershell cmds.md",
     "Python cmds.md",
     "Stuff to learn and read.md",
-    "RCHSA notes.md",
     "README.md",
     "2021-12-30_15-02-09-937ce4d913819135252614e55ffcd74e 1.png",
     "2021-12-30_14-37-00-6237f02d1287cc812d1d0a4957ac7410.png",
