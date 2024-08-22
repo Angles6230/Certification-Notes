@@ -20,6 +20,18 @@
             }
           },
           {
+            "id": "2db2b49faabb5fb1",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "conflict-files-obsidian-git.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
             "id": "fff12301b9fb55d9",
             "type": "leaf",
             "state": {
@@ -41,7 +53,8 @@
               }
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -93,7 +106,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Bash scripting.md"
+                "file": "conflict-files-obsidian-git.md"
               }
             }
           },
@@ -125,7 +138,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Bash scripting.md",
+                "file": "conflict-files-obsidian-git.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -142,7 +155,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Bash scripting.md",
+                "file": "conflict-files-obsidian-git.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -177,11 +190,13 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "98374d9bd0611a6d",
+  "active": "2db2b49faabb5fb1",
   "lastOpenFiles": [
+    "Bash scripting.md",
+    "conflict-files-obsidian-git.md",
+    "Win AD DC.md",
     "CCNA Config 2.md",
     "CASP+ Notes.md",
-    "Bash scripting.md",
     "CCNA Study.md",
     "CCNA configs.md",
     "Vagrant Commands.md",
