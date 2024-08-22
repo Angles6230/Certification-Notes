@@ -32,6 +32,18 @@
             }
           },
           {
+            "id": "d0a1f6ce556b3edb",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "conflict-files-obsidian-git.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
             "id": "fff12301b9fb55d9",
             "type": "leaf",
             "state": {
@@ -54,7 +66,7 @@
             }
           }
         ],
-        "currentTab": 1
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -106,7 +118,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Win AD DC.md"
+                "file": "conflict-files-obsidian-git.md"
               }
             }
           },
@@ -138,7 +150,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Win AD DC.md",
+                "file": "conflict-files-obsidian-git.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -155,7 +167,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Win AD DC.md",
+                "file": "conflict-files-obsidian-git.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -190,14 +202,14 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "2db2b49faabb5fb1",
+  "active": "d0a1f6ce556b3edb",
   "lastOpenFiles": [
+    "Win AD DC.md",
+    "conflict-files-obsidian-git.md",
     "RCHSA notes.md",
     "Sec+ Notes.md",
     "Net+ Notes.md",
-    "conflict-files-obsidian-git.md",
     "Bash scripting.md",
-    "Win AD DC.md",
     "CCNA Config 2.md",
     "CASP+ Notes.md",
     "CCNA Study.md",
