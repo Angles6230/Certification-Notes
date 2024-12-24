@@ -232,23 +232,49 @@
 - **Threat modeling**
 
 #### 2.5 Explain concepts related to vulnerability response, handling, and management.
-- **Incident response activities**
-  - Detection and analysis
-  - Containment
-  - Eradication
-  - Recovery
-- **Handling vulnerabilities**
-  - Prioritization
-  - Escalation
-  - Risk assessment
-- **Management lifecycle**
-  - Identification
-  - Reporting
-  - Mitigation
-  - Lessons learned
-
----
-
+- Compensating control
+- Control types
+	- Managerial
+	- Operational
+	- Technical
+	- Preventative
+	- Detective
+	- Responsive
+	- Corrective
+• Patching and configuration
+management
+- Testing
+- Implementation
+- Rollback
+- Validation
+• Maintenance windows
+• Exceptions
+• Risk management principles
+- Accept
+- Transfer
+- Avoid
+- Mitigate
+• Policies, governance, and service-
+level objectives (SLOs)
+• Prioritization and escalation
+• Attack surface management
+- Edge discovery
+- Passive discovery
+- Security controls testing
+- Penetration testing and
+adversary emulation
+- Bug bounty
+- Attack surface reduction
+• Secure coding best practices
+- Input validation
+- Output encoding
+- Session management
+- Authentication
+- Data protection
+- Parameterized queries
+• Secure software development
+life cycle (SDLC)
+• Threat modeling
 ### 3.0 Incident Response and Management
 #### 3.1 Explain concepts related to attack methodology frameworks.
 - **Cyber kill chains**
