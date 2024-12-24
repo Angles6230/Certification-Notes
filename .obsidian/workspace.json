@@ -150,7 +150,8 @@
               "title": "Source Control"
             }
           }
-        ]
+        ],
+        "currentTab": 3
       }
     ],
     "direction": "horizontal",
@@ -228,7 +229,7 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "0126797cffec9f25",
+  "active": "a0ea5842b361df55",
   "lastOpenFiles": [
     "CASP+ Notes.md",
     "CySA Prep.md",
