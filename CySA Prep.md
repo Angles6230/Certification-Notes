@@ -421,3 +421,5 @@ life cycle (SDLC)
 - LM Kill chainm
 - XMl vs SQL injection
 - n the context of the WannaCry ransomware attack, the NSA tool, EternalBlue, was used during the weaponization phase to exploit a known vulnerability in Microsoft’s SMB protocol. The delivery phase involves the transmission of the malicious payload to the victim, not the creation of it. Command and control refers to the phase where the attacker establishes a channel to control the compromised system. Actions and Objectives phase would be when the attackers actually encrypted the files and demanded the ransom.
+- Pen testing plan
+- TOGAF framework?
