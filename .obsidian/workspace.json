@@ -74,9 +74,21 @@
               "icon": "lucide-file",
               "title": "Release Notes 1.6.7"
             }
+          },
+          {
+            "id": "fb8f53c7ab61a8df",
+            "type": "leaf",
+            "state": {
+              "type": "release-notes",
+              "state": {
+                "currentVersion": "1.8.4"
+              },
+              "icon": "lucide-book-up",
+              "title": "Release Notes 1.8.4"
+            }
           }
         ],
-        "currentTab": 2
+        "currentTab": 3
       }
     ],
     "direction": "vertical"
@@ -134,10 +146,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "CySA Prep.md"
+                "file": "CASP+ Notes.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of CySA Prep"
+              "title": "Outline of CASP+ Notes"
             }
           },
           {
@@ -229,16 +244,16 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "a0ea5842b361df55",
+  "active": "fff12301b9fb55d9",
   "lastOpenFiles": [
-    "CASP+ Notes.md",
     "CySA Prep.md",
     "Win AD DC.md",
+    "Bash scripting.md",
+    "CASP+ Notes.md",
     "conflict-files-obsidian-git.md",
     "RCHSA notes.md",
     "Sec+ Notes.md",
     "Net+ Notes.md",
-    "Bash scripting.md",
     "CCNA Config 2.md",
     "CCNA Study.md",
     "CCNA configs.md",
