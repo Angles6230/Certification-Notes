@@ -88,7 +88,7 @@
             }
           }
         ],
-        "currentTab": 3
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -146,13 +146,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "CASP+ Notes.md",
+                "file": "CySA Prep.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of CASP+ Notes"
+              "title": "Outline of CySA Prep"
             }
           },
           {
@@ -244,12 +244,12 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "fff12301b9fb55d9",
+  "active": "0126797cffec9f25",
   "lastOpenFiles": [
+    "CASP+ Notes.md",
     "CySA Prep.md",
     "Win AD DC.md",
     "Bash scripting.md",
-    "CASP+ Notes.md",
     "conflict-files-obsidian-git.md",
     "RCHSA notes.md",
     "Sec+ Notes.md",
