@@ -86,9 +86,21 @@
               "icon": "lucide-book-up",
               "title": "Release Notes 1.8.4"
             }
+          },
+          {
+            "id": "ab8af26039f57b8b",
+            "type": "leaf",
+            "state": {
+              "type": "release-notes",
+              "state": {
+                "currentVersion": "1.8.9"
+              },
+              "icon": "lucide-book-up",
+              "title": "Release Notes 1.8.9"
+            }
           }
         ],
-        "currentTab": 2
+        "currentTab": 6
       }
     ],
     "direction": "vertical"
@@ -244,7 +256,7 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "98374d9bd0611a6d",
+  "active": "ab8af26039f57b8b",
   "lastOpenFiles": [
     "CySA Prep.md",
     "CASP+ Notes.md",
