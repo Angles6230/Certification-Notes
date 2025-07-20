@@ -1,0 +1,18 @@
+- kube-apiserver talks to kublet
+- Master node
+	- kubeapi server
+	- etcd
+	- controller
+	- scheduler
+- Worker node
+	- kubelet
+	- Container runtime
+- ContainerD vs docker
+	 Docker consists of multiple tools i.e. CLI, API and volume,security etc
+	- Container runtime called runC
+		- ContainerD daemon manages runC
+- ctr is bundled with containerD but not user friendly
+	- Used for debugging containers only
+- Nerdctl - docker like CLI for container d
+	- Supports docker compose
+	- 
