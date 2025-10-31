@@ -81,14 +81,12 @@
             "id": "49f5c79178d44d1a",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "image",
               "state": {
-                "file": "Vagrant Commands.md",
-                "mode": "source",
-                "source": false
+                "file": "Pasted image 20231025200700.png"
               },
-              "icon": "lucide-file",
-              "title": "Vagrant Commands"
+              "icon": "lucide-image",
+              "title": "Pasted image 20231025200700"
             }
           }
         ],
@@ -250,6 +248,9 @@
   },
   "active": "49f5c79178d44d1a",
   "lastOpenFiles": [
+    "Powershell cmds.md",
+    "Sec+ issues.md",
+    "Vagrant Commands.md",
     "tags.md",
     "K8s beginners.md",
     "CKA Notes.md",
@@ -264,7 +265,6 @@
     "CCNA Config 2.md",
     "CCNA Study.md",
     "CCNA configs.md",
-    "Vagrant Commands.md",
     "CASP+ Notes",
     "Linux notes.md",
     "Linux cmds to remember.md",
@@ -272,7 +272,6 @@
     "CCNA tipics.md",
     "Net + issues.md",
     "Pasted image 20231025200700.png",
-    "Powershell cmds.md",
     "Python cmds.md",
     "Stuff to learn and read.md",
     "README.md",
