@@ -83,12 +83,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "K8s beginners.md",
+                "file": "Vagrant Commands.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "K8s beginners"
+              "title": "Vagrant Commands"
             }
           }
         ],
@@ -250,8 +250,9 @@
   },
   "active": "49f5c79178d44d1a",
   "lastOpenFiles": [
-    "CKA Notes.md",
+    "tags.md",
     "K8s beginners.md",
+    "CKA Notes.md",
     "CASP+ Notes.md",
     "CySA Prep.md",
     "Win AD DC.md",
@@ -267,7 +268,6 @@
     "CASP+ Notes",
     "Linux notes.md",
     "Linux cmds to remember.md",
-    "tags.md",
     "CCNA 2.md",
     "CCNA tipics.md",
     "Net + issues.md",
