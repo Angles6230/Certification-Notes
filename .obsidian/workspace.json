@@ -81,16 +81,30 @@
             "id": "49f5c79178d44d1a",
             "type": "leaf",
             "state": {
-              "type": "image",
+              "type": "markdown",
               "state": {
-                "file": "Pasted image 20231025200700.png"
+                "file": "Bash scripting.md",
+                "mode": "source",
+                "source": false
               },
-              "icon": "lucide-image",
-              "title": "Pasted image 20231025200700"
+              "icon": "lucide-file",
+              "title": "Bash scripting"
+            }
+          },
+          {
+            "id": "6a47aaee871e8c47",
+            "type": "leaf",
+            "state": {
+              "type": "release-notes",
+              "state": {
+                "currentVersion": "1.9.14"
+              },
+              "icon": "lucide-book-up",
+              "title": "Release Notes 1.9.14"
             }
           }
         ],
-        "currentTab": 5
+        "currentTab": 6
       }
     ],
     "direction": "vertical"
@@ -238,6 +252,7 @@
   },
   "left-ribbon": {
     "hiddenItems": {
+      "bases:Create new base": false,
       "switcher:Open quick switcher": false,
       "graph:Open graph view": false,
       "canvas:Create new canvas": false,
@@ -246,15 +261,17 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "49f5c79178d44d1a",
+  "active": "6a47aaee871e8c47",
   "lastOpenFiles": [
-    "Powershell cmds.md",
+    "CASP+ Notes.md",
     "Sec+ issues.md",
+    "Python cmds.md",
+    "Pasted image 20231025200700.png",
+    "Powershell cmds.md",
     "Vagrant Commands.md",
     "tags.md",
     "K8s beginners.md",
     "CKA Notes.md",
-    "CASP+ Notes.md",
     "CySA Prep.md",
     "Win AD DC.md",
     "Bash scripting.md",
@@ -271,8 +288,6 @@
     "CCNA 2.md",
     "CCNA tipics.md",
     "Net + issues.md",
-    "Pasted image 20231025200700.png",
-    "Python cmds.md",
     "Stuff to learn and read.md",
     "README.md",
     "2021-12-30_15-02-09-937ce4d913819135252614e55ffcd74e 1.png",
